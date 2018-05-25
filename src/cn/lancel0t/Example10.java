@@ -61,7 +61,7 @@ public class Example10 {
 	public int RectCover(int target) {
 		if (target <= 2)
 			return target;
-		
+
 		return RectCover(target - 1) + RectCover(target - 2);
 	}
 
@@ -69,16 +69,16 @@ public class Example10 {
 
 		Example10 exam = new Example10();
 
-		System.out.print("============前20斐波那契数列：");
+		System.out.print("===前20斐波那契数列：");
 		for (int i = 0; i < 20; i++) {
 			System.out.print(exam.Fibonacci(i) + " ");
 		}
 		System.out.println();
 
-		System.out.println("============青蛙1跳20级台阶，跳法总数：" + exam.JumpFloor(20));
+		System.out.println("===青蛙1跳20级台阶，跳法总数：" + exam.JumpFloor(20));
 
-		System.out.println("============青蛙2跳20级台阶，跳法总数：" + exam.JumpFloorII(20));
-		
-		System.out.println("============2×8矩形覆盖，总共方法总数：" + exam.RectCover(8));
+		System.out.println("===青蛙2跳20级台阶，跳法总数：" + exam.JumpFloorII(20));
+
+		System.out.println("===2×8矩形覆盖，总共方法总数：" + exam.RectCover(8));
 	}
 }

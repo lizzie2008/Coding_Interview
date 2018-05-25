@@ -61,8 +61,9 @@ public class Example18 {
 		ListNode head = exam.deleteNode(node1, node3);
 		ListNode currNode = head;
 		while (currNode != null) {
-			System.out.println(currNode.value + " ");
+			System.out.print(currNode.value + " ");
 			currNode = currNode.next;
 		}
+		System.out.println("[1 2 4 5]");
 	}
 }

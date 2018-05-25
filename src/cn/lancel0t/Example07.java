@@ -81,7 +81,8 @@ public class Example07 {
 		int[] preorder = { 10, 6, 4, 8, 14, 12, 16 };
 		int[] inorder = { 4, 6, 8, 10, 12, 14, 16 };
 		TreeNode root = exam.reConstructBinaryTree(preorder, inorder);
-		System.out.print("====中序遍历：");
+		System.out.print("中序遍历：");
 		exam.printTree(root);
+		System.out.println("[4 6 8 10 12 14 16 ]");
 	}
 }

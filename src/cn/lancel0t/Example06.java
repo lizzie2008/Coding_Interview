@@ -52,5 +52,6 @@ public class Example06 {
 		for (Integer val : exam.printListFromTailToHead(node1)) {
 			System.out.print(val + " ");
 		}
+		System.out.print("[5 4 3 2 1]");
 	}
 }

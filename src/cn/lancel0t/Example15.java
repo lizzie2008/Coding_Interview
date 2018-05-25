@@ -43,18 +43,18 @@ public class Example15 {
 
 		Example15 exam = new Example15();
 
-		System.out.println("=============算法1输出：");
-		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000000)); // 0
-		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000001)); // 1
-		System.out.println(exam.NumberOf1I(0B11111111_11111111_11111111_11111111)); // -1
-		System.out.println(exam.NumberOf1I(0B01111111_11111111_11111111_11111111)); // Integer.MAX_VALUE
-		System.out.println(exam.NumberOf1I(0B10000000_00000000_00000000_00000000)); // Integer.MIN_VALUE
-		System.out.println("=============算法2输出：");
-		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000000)); // 0
-		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000001)); // 1
-		System.out.println(exam.NumberOf1(0B11111111_11111111_11111111_11111111)); // -1
-		System.out.println(exam.NumberOf1(0B01111111_11111111_11111111_11111111)); // Integer.MAX_VALUE
-		System.out.println(exam.NumberOf1(0B10000000_00000000_00000000_00000000)); // Integer.MIN_VALUE
+		System.out.println("===算法1输出：");
+		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000000) + "[0]"); // 0
+		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000001) + "[1]"); // 1
+		System.out.println(exam.NumberOf1I(0B11111111_11111111_11111111_11111111) + "[32]"); // -1
+		System.out.println(exam.NumberOf1I(0B01111111_11111111_11111111_11111111) + "[31]"); // Integer.MAX_VALUE
+		System.out.println(exam.NumberOf1I(0B10000000_00000000_00000000_00000000) + "[1]"); // Integer.MIN_VALUE
+		System.out.println("===算法2输出：");
+		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000000) + "[0]"); // 0
+		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000001) + "[1]"); // 1
+		System.out.println(exam.NumberOf1(0B11111111_11111111_11111111_11111111) + "[32]"); // -1
+		System.out.println(exam.NumberOf1(0B01111111_11111111_11111111_11111111) + "[31]"); // Integer.MAX_VALUE
+		System.out.println(exam.NumberOf1(0B10000000_00000000_00000000_00000000) + "[1]"); // Integer.MIN_VALUE
 
 	}
 }

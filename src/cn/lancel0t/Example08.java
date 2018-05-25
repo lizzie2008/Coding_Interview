@@ -98,20 +98,20 @@ public class Example08 {
 		exam.assemble(n14, null, null, n7);
 		exam.assemble(n15, null, null, n7);
 
-		System.out.println(exam.GetNext(n1).val);
-		System.out.println(exam.GetNext(n2).val);
-		System.out.println(exam.GetNext(n3).val);
-		System.out.println(exam.GetNext(n4).val);
-		System.out.println(exam.GetNext(n5).val);
-		System.out.println(exam.GetNext(n6).val);
-		System.out.println(exam.GetNext(n7).val);
-		System.out.println(exam.GetNext(n8).val);
-		System.out.println(exam.GetNext(n9).val);
-		System.out.println(exam.GetNext(n10).val);
-		System.out.println(exam.GetNext(n11).val);
-		System.out.println(exam.GetNext(n12).val);
-		System.out.println(exam.GetNext(n13).val);
-		System.out.println(exam.GetNext(n14).val);
-		//System.out.println(exam.GetNext(n15).val);
+		System.out.println(exam.GetNext(n1).val + "[12]");
+		System.out.println(exam.GetNext(n2).val + "[10]");
+		System.out.println(exam.GetNext(n3).val + "[14]");
+		System.out.println(exam.GetNext(n4).val + "[9]");
+		System.out.println(exam.GetNext(n5).val + "[11]");
+		System.out.println(exam.GetNext(n6).val + "[13]");
+		System.out.println(exam.GetNext(n7).val + "[15]");
+		System.out.println(exam.GetNext(n8).val + "[4]");
+		System.out.println(exam.GetNext(n9).val + "[2]");
+		System.out.println(exam.GetNext(n10).val + "[5]");
+		System.out.println(exam.GetNext(n11).val + "[1]");
+		System.out.println(exam.GetNext(n12).val + "[6]");
+		System.out.println(exam.GetNext(n13).val + "[3]");
+		System.out.println(exam.GetNext(n14).val + "[7]");
+		// System.out.println(exam.GetNext(n15).val);
 	}
 }

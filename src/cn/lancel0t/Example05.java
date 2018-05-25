@@ -69,7 +69,7 @@ public class Example05 {
 
 		Example05 exam = new Example05();
 		// 测试1
-		System.out.println("====测试1：" + exam.replaceSpace(new StringBuffer("we are happy.")));
+		System.out.println("====测试1：" + exam.replaceSpace(new StringBuffer("we are happy.")) + "[we%20are%20happy.]");
 
 		// 测试2
 		char[] str = new char[50];
@@ -87,7 +87,7 @@ public class Example05 {
 		str[11] = 'y';
 		str[12] = '.';
 		int len = exam.replaceSpace(str, 50);
-		System.out.println("====测试2：" + new String(str).substring(0, len));
+		System.out.println("====测试2：" + new String(str).substring(0, len) + "[we%20are%20happy.]");
 	}
 
 }

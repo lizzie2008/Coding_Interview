@@ -52,10 +52,10 @@ public class Example03 {
 		int[] numbers2 = { 2, 1, 3, 1, 4 };
 		int[] duplication = new int[1];
 		if (exam.duplicate(numbers1, numbers1.length, duplication)) {
-			System.out.println("==========数组1含有重复元素：" + duplication[0]);
+			System.out.println("数组1含有重复元素：" + duplication[0] + "[2]");
 		}
 		if (exam.duplicate(numbers2, numbers2.length, duplication)) {
-			System.out.println("==========数组2含有重复元素：" + duplication[0]);
+			System.out.println("数组2含有重复元素：" + duplication[0] + "[1]");
 		}
 	}
 

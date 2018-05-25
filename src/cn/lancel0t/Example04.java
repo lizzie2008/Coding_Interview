@@ -41,13 +41,13 @@ public class Example04 {
 	public static void main(String[] args) {
 		Example04 exam = new Example04();
 		int[][] matrix = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println(exam.Find(7, matrix)); // 要查找的数在数组中
-		System.out.println(exam.Find(5, matrix)); // 要查找的数不在数组中
-		System.out.println(exam.Find(1, matrix)); // 要查找的数是数组中最小的数字
-		System.out.println(exam.Find(15, matrix)); // 要查找的数是数组中最大的数字
-		System.out.println(exam.Find(0, matrix)); // 要查找的数比数组中最小的数字还小
-		System.out.println(exam.Find(16, matrix)); // 要查找的数比数组中最大的数字还大
-		System.out.println(exam.Find(16, null)); // 健壮性测试，输入空指针
+		System.out.println(exam.Find(7, matrix) + "[true]"); // 要查找的数在数组中
+		System.out.println(exam.Find(5, matrix) + "[false]"); // 要查找的数不在数组中
+		System.out.println(exam.Find(1, matrix) + "[true]"); // 要查找的数是数组中最小的数字
+		System.out.println(exam.Find(15, matrix) + "[true]"); // 要查找的数是数组中最大的数字
+		System.out.println(exam.Find(0, matrix) + "[false]"); // 要查找的数比数组中最小的数字还小
+		System.out.println(exam.Find(16, matrix) + "[false]"); // 要查找的数比数组中最大的数字还大
+		System.out.println(exam.Find(16, null) + "[false]"); // 健壮性测试，输入空指针
 	}
 
 }

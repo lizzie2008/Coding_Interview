@@ -48,13 +48,13 @@ public class Example09 {
 		exam.push(1);
 		exam.push(2);
 		exam.push(3);
-		System.out.println("== 出队列：" + exam.pop());
+		System.out.println("== 出队列：" + exam.pop() + "[1]");
 		exam.push(4);
 		exam.push(5);
-		System.out.println("== 出队列：" + exam.pop());
-		System.out.println("== 出队列：" + exam.pop());
-		System.out.println("== 出队列：" + exam.pop());
-		System.out.println("== 出队列：" + exam.pop());
+		System.out.println("== 出队列：" + exam.pop() + "[2]");
+		System.out.println("== 出队列：" + exam.pop() + "[3]");
+		System.out.println("== 出队列：" + exam.pop() + "[4]");
+		System.out.println("== 出队列：" + exam.pop() + "[5]");
 
 	}
 }
