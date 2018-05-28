@@ -6,19 +6,11 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
+
+import cn.lancel0t.utilities.ListNode;
 
 public class Example18 {
-
-	// 链表结点
-	public class ListNode {
-		int value;
-		ListNode next;
-
-		ListNode(int value) {
-			this.value = value;
-		}
-	}
 
 	// O(1)时间删除链表结点
 	public ListNode deleteNode(ListNode head, ListNode toBeDeleted) {
@@ -37,7 +29,7 @@ public class Example18 {
 			currNode.next = null;
 		} else {
 			// 拷贝待删除节点的下个节点的值给删除节点，并删除待删除节点的下个节点
-			toBeDeleted.value = toBeDeleted.next.value;
+			toBeDeleted.val = toBeDeleted.next.val;
 			toBeDeleted.next = toBeDeleted.next.next;
 		}
 
@@ -48,22 +40,19 @@ public class Example18 {
 
 		Example18 exam = new Example18();
 
-		ListNode node1 = exam.new ListNode(1);
-		ListNode node2 = exam.new ListNode(2);
-		ListNode node3 = exam.new ListNode(3);
-		ListNode node4 = exam.new ListNode(4);
-		ListNode node5 = exam.new ListNode(5);
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
 		node1.next = node2;
 		node2.next = node3;
 		node3.next = node4;
 		node4.next = node5;
 
 		ListNode head = exam.deleteNode(node1, node3);
-		ListNode currNode = head;
-		while (currNode != null) {
-			System.out.print(currNode.value + " ");
-			currNode = currNode.next;
-		}
-		System.out.println("[1 2 4 5]");
+		System.out.print("Result:");
+		ListNode.print(head);
+		System.out.println("Expect:" + "1 2 4 5");
 	}
 }

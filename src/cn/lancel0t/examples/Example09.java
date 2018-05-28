@@ -7,7 +7,7 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
 
 import java.util.Stack;
 

@@ -9,19 +9,11 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
+
+import cn.lancel0t.utilities.TreeNode;
 
 public class Example07 {
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-
-		TreeNode(int x) {
-			val = x;
-		}
-	}
 
 	public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
 		// 输入的合法性判断，两个数组都不能为空，长度相等且有数据

@@ -7,7 +7,7 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
 
 public class Example05 {
 
@@ -65,29 +65,69 @@ public class Example05 {
 		return newLength;
 	}
 
+	private void test(String str, String expect) {
+
+		char[] chars = toChars(str);
+		int ret = replaceSpace(chars, 100);
+		if (ret >= 0) {
+			System.out.printf("替换空格：Result:%s\t Expect:%s\n\n", new String(chars).substring(0, ret), expect);
+		} else
+			System.out.printf("替换空格：Result:%s\t Expect:%s\n\n", null, null);
+	}
+
+	private char[] toChars(String str) {
+
+		if (str != null) {
+			char[] result = new char[100];
+			int i = 0;
+			for (char c : str.toCharArray()) {
+				result[i++] = c;
+			}
+			return result;
+		} else
+			return null;
+
+	}
+
 	public static void main(String[] args) {
 
 		Example05 exam = new Example05();
-		// 测试1
-		System.out.println("====测试1：" + exam.replaceSpace(new StringBuffer("we are happy.")) + "[we%20are%20happy.]");
 
-		// 测试2
-		char[] str = new char[50];
-		str[0] = 'w';
-		str[1] = 'e';
-		str[2] = ' ';
-		str[3] = 'a';
-		str[4] = 'r';
-		str[5] = 'e';
-		str[6] = ' ';
-		str[7] = 'h';
-		str[8] = 'a';
-		str[9] = 'p';
-		str[10] = 'p';
-		str[11] = 'y';
-		str[12] = '.';
-		int len = exam.replaceSpace(str, 50);
-		System.out.println("====测试2：" + new String(str).substring(0, len) + "[we%20are%20happy.]");
+		// 空格在句子中间
+		System.out.println("=====Test1=====");
+		exam.test("hello world", "hello%20world");
+
+		// 空格在句子开头
+		System.out.println("=====Test2=====");
+		exam.test(" helloworld", "%20helloworld");
+
+		// 空格在句子末尾
+		System.out.println("=====Test3=====");
+		exam.test("helloworld ", "helloworld%20");
+
+		// 连续有两个空格
+		System.out.println("=====Test4=====");
+		exam.test("hello  world", "hello%20%20world");
+
+		// 传入null
+		System.out.println("=====Test5=====");
+		exam.test(null, null);
+
+		// 传入内容为空的字符串
+		System.out.println("=====Test6=====");
+		exam.test("", "");
+
+		// 传入内容为一个空格的字符串
+		System.out.println("=====Test7=====");
+		exam.test(" ", "%20");
+
+		// 传入的字符串没有空格
+		System.out.println("=====Test8=====");
+		exam.test("helloworld", "helloworld");
+
+		// 传入的字符串全是空格
+		System.out.println("=====Test9=====");
+		exam.test("   ", "%20%20%20");
 	}
 
 }

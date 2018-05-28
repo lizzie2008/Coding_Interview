@@ -6,21 +6,11 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
 
-import cn.lancel0t.Example18.ListNode;
+import cn.lancel0t.utilities.ListNode;
 
 public class Example22 {
-
-	// 链表节点
-	public class ListNode {
-		int val;
-		ListNode next = null;
-
-		ListNode(int val) {
-			this.val = val;
-		}
-	}
 
 	/*
 	 * 这种题一般考虑双指针：
@@ -32,7 +22,7 @@ public class Example22 {
 		if (head == null || k <= 0)
 			return null;
 
-		// pointer先走k-1个位置
+		// point1先走k-1个位置
 		ListNode point1 = head;
 		for (int i = 1; i < k; i++) {
 			// 说明还有结点
@@ -44,7 +34,7 @@ public class Example22 {
 			}
 		}
 
-		// pointer还没有走到链表的末尾，那么pointer和head一起走
+		// point1还没有走到链表的末尾，那么point1和point2一起走
 		ListNode point2 = head;
 		while (point1.next != null) {
 			point1 = point1.next;
@@ -58,11 +48,11 @@ public class Example22 {
 
 		Example22 exam = new Example22();
 
-		ListNode node1 = exam.new ListNode(1);
-		ListNode node2 = exam.new ListNode(2);
-		ListNode node3 = exam.new ListNode(3);
-		ListNode node4 = exam.new ListNode(4);
-		ListNode node5 = exam.new ListNode(5);
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
 
 		node1.next = node2;
 		node2.next = node3;

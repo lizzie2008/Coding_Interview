@@ -9,7 +9,7 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
 
 public class Example03 {
 
@@ -23,6 +23,11 @@ public class Example03 {
 	public boolean duplicate(int numbers[], int length, int[] duplication) {
 		if (numbers == null || length <= 0)
 			return false;
+
+		for (int i = 0; i < length; i++) {
+			if (numbers[i] < 0 || numbers[i] > length - 1)
+				return false;
+		}
 
 		// 从头到尾扫描数组
 		for (int i = 0; i < length; i++) {
@@ -45,18 +50,30 @@ public class Example03 {
 		return false;
 	}
 
+	private void test(int numbers[], int expect) {
+		int[] duplication = new int[1];
+		int length = numbers == null ? 0 : numbers.length;
+		if (duplicate(numbers, length, duplication))
+			System.out.printf("含有重复元素：Result:%d\t Expect:%d\n", duplication[0], expect);
+		else
+			System.out.println("没有重复元素。");
+	}
+
 	public static void main(String[] args) {
 		Example03 exam = new Example03();
 
-		int[] numbers1 = { 2, 3, 1, 0, 2, 5, 3 };
-		int[] numbers2 = { 2, 1, 3, 1, 4 };
-		int[] duplication = new int[1];
-		if (exam.duplicate(numbers1, numbers1.length, duplication)) {
-			System.out.println("数组1含有重复元素：" + duplication[0] + "[2]");
-		}
-		if (exam.duplicate(numbers2, numbers2.length, duplication)) {
-			System.out.println("数组2含有重复元素：" + duplication[0] + "[1]");
-		}
+		// 重复的数字是数组中最小的数字
+		exam.test(new int[] { 2, 1, 3, 1, 4 }, 1);
+		// 重复的数字是数组中最大的数字
+		exam.test(new int[] { 2, 4, 3, 1, 4 }, 4);
+		// 数组中存在多个重复的数字
+		exam.test(new int[] { 2, 4, 2, 1, 4 }, 2);
+		// 没有重复的数字
+		exam.test(new int[] { 2, 1, 3, 0, 4 }, -1);
+		// 数字范围不在0~n-1
+		exam.test(new int[] { 2, 1, 3, 5, 4 }, -1);
+		// 无效的输入
+		exam.test(null, -1);
 	}
 
 }

@@ -6,7 +6,7 @@
  * @author lancel0t
  * @date 2018年5月22日
  */
-package cn.lancel0t;
+package cn.lancel0t.examples;
 
 public class Example02 {
 
@@ -126,13 +126,13 @@ public class Example02 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Singleton1.getInstance() == Singleton1.getInstance());
-		System.out.println(Singleton2.getInstance() == Singleton2.getInstance());
-		System.out.println(Singleton3.getInstance() == Singleton3.getInstance());
-		System.out.println(Singleton4.getInstance() == Singleton4.getInstance());
-		System.out.println(Singleton5.getInstance() == Singleton5.getInstance());
-		//System.out.println(Singleton6.INSTANCE == Singleton6.INSTANCE);
-		System.out.println(Singleton7.getInstance() == Singleton7.getInstance());
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton1.getInstance() == Singleton1.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton2.getInstance() == Singleton2.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton3.getInstance() == Singleton3.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton4.getInstance() == Singleton4.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton5.getInstance() == Singleton5.getInstance(), true);
+		//System.out.printf("Result: %b\tExpect: %b\n", Singleton6.INSTANCE == Singleton6.INSTANCE, true);
+		System.out.printf("Result: %b\tExpect: %b\n", Singleton7.getInstance() == Singleton7.getInstance(), true);
 	}
 
 }
