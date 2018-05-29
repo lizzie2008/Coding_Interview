@@ -14,7 +14,7 @@ public class E17_Print1ToMaxOfNDigits {
 	public void printOneToNthDigits(int n) {
 		// 输入的数字不能为小于1
 		if (n < 1) {
-			throw new RuntimeException("The input number must larger than 0");
+			throw new RuntimeException("输入的位数应该大于0！");
 		}
 
 		int[] numbers = new int[n];
@@ -53,10 +53,27 @@ public class E17_Print1ToMaxOfNDigits {
 		System.out.print(" ");
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, int n) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("%d位数打印：\n", n);
+			printOneToNthDigits(n);
+			System.out.println();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println();
+	}
+
 	public static void main(String[] args) {
 
 		E17_Print1ToMaxOfNDigits exam = new E17_Print1ToMaxOfNDigits();
-		System.out.printf("%d位整型数打印:\n", 2);
-		exam.printOneToNthDigits(2);
+
+		exam.test("test1", 1);
+		exam.test("test2", 2);
+		exam.test("test3", 3);
+		exam.test("test4", 0);
+		exam.test("test5", -1);
 	}
 }

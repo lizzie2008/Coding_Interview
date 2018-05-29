@@ -32,40 +32,55 @@ public class E24_ReverseList {
 
 	}
 
-	public static void main(String[] args) {
+	// ====================测试代码====================
+	private void test(String testName, ListNode head) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.print("反转前链表：");
+			ListNode.print(head);
+			ListNode newHead = ReverseList(head);
+			System.out.print("反转后链表：");
+			ListNode.print(newHead);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println();
+	}
 
-		E24_ReverseList exam = new E24_ReverseList();
-
+	// 输入的链表有多个结点
+	private void test1() {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
 		ListNode node3 = new ListNode(3);
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
 
-		// 多个节点测试
-		node1.next = node2;
-		node2.next = node3;
-		node3.next = node4;
-		node4.next = node5;
-		System.out.println("=====Test1=====");
-		System.out.println("原始链表：");
-		ListNode.print(node1);
-		System.out.println("逆转链表：");
-		ListNode.print(exam.ReverseList(node1));
-		System.out.println();
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
 
-		// 空节点测试
-		System.out.println("=====Test2=====");
-		System.out.printf("逆转链表：%s\n", exam.ReverseList(null) == null ? "null" : exam.ReverseList(node1));
-		System.out.println();
-		
-		// 单节点测试
-		node1.next=null;
-		System.out.println("=====Test3=====");
-		System.out.println("原始链表：");
-		ListNode.print(node1);
-		System.out.println("逆转链表：");
-		ListNode.print(exam.ReverseList(node1));
-		System.out.println();
+		test("test1", node1);
+	}
+
+	// 输入的链表只有一个结点
+	private void test2() {
+		ListNode node1 = new ListNode(1);
+
+		test("test2", node1);
+	}
+
+	// 输入空链表
+	private void test3() {
+		test("test3", null);
+	}
+
+	public static void main(String[] args) {
+
+		E24_ReverseList exam = new E24_ReverseList();
+
+		exam.test1();
+		exam.test2();
+		exam.test3();
 	}
 }

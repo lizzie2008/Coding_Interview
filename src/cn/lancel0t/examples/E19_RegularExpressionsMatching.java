@@ -73,44 +73,51 @@ public class E19_RegularExpressionsMatching {
 		return false;
 	}
 
-	private void test(String str, String pattern, boolean expect) {
-		System.out.printf("匹配结果：%b [%b]\n", match(str.toCharArray(), pattern.toCharArray()), expect);
+	// ====================测试代码====================
+	private void test(String testName, String str, String pattern, boolean expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("匹配结果：Result:%b \t Expect:%b\n\n", match(str.toCharArray(), pattern.toCharArray()),
+					expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void main(String[] args) {
 
 		E19_RegularExpressionsMatching exam = new E19_RegularExpressionsMatching();
 
-		exam.test("", "", true);
-		exam.test("", ".*", true);
-		exam.test("", ".", false);
-		exam.test("", "c*", true);
-		exam.test("a", ".*", true);
-		exam.test("a", "a.", false);
-		exam.test("a", "", false);
-		exam.test("a", ".", true);
-		exam.test("a", "ab*", true);
-		exam.test("a", "ab*a", false);
-		exam.test("aa", "aa", true);
-		exam.test("aa", "a*", true);
-		exam.test("aa", ".*", true);
-		exam.test("aa", ".", false);
-		exam.test("ab", ".*", true);
-		exam.test("ab", ".*", true);
-		exam.test("aaa", "aa*", true);
-		exam.test("aaa", "aa.a", false);
-		exam.test("aaa", "a.a", true);
-		exam.test("aaa", ".a", false);
-		exam.test("aaa", "a*a", true);
-		exam.test("aaa", "ab*a", false);
-		exam.test("aaa", "ab*ac*a", true);
-		exam.test("aaa", "ab*a*c*a", true);
-		exam.test("aaa", ".*", true);
-		exam.test("aab", "c*a*b", true);
-		exam.test("aaca", "ab*a*c*a", true);
-		exam.test("aaba", "ab*a*c*a", false);
-		exam.test("bbbba", ".*a*a", true);
-		exam.test("bcbbabab", ".*a*a", false);
+		exam.test("test1", "", "", true);
+		exam.test("test2", "", ".*", true);
+		exam.test("test3", "", ".", false);
+		exam.test("test4", "", "c*", true);
+		exam.test("test5", "a", ".*", true);
+		exam.test("test6", "a", "a.", false);
+		exam.test("test7", "a", "", false);
+		exam.test("test8", "a", ".", true);
+		exam.test("test9", "a", "ab*", true);
+		exam.test("test10", "a", "ab*a", false);
+		exam.test("test11", "aa", "aa", true);
+		exam.test("test12", "aa", "a*", true);
+		exam.test("test13", "aa", ".*", true);
+		exam.test("test14", "aa", ".", false);
+		exam.test("test15", "ab", ".*", true);
+		exam.test("test16", "ab", ".*", true);
+		exam.test("test17", "aaa", "aa*", true);
+		exam.test("test18", "aaa", "aa.a", false);
+		exam.test("test19", "aaa", "a.a", true);
+		exam.test("test20", "aaa", ".a", false);
+		exam.test("test21", "aaa", "a*a", true);
+		exam.test("test22", "aaa", "ab*a", false);
+		exam.test("test23", "aaa", "ab*ac*a", true);
+		exam.test("test24", "aaa", "ab*a*c*a", true);
+		exam.test("test25", "aaa", ".*", true);
+		exam.test("test26", "aab", "c*a*b", true);
+		exam.test("test27", "aaca", "ab*a*c*a", true);
+		exam.test("test28", "aaba", "ab*a*c*a", false);
+		exam.test("test29", "bbbba", ".*a*a", true);
+		exam.test("test30", "bcbbabab", ".*a*a", false);
 
 	}
 }

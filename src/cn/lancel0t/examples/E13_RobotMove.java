@@ -56,18 +56,29 @@ public class E13_RobotMove {
 		return count;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, int threshold, int rows, int cols, int expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("机器人的运动范围：Result:%d \t Expect:%d\n\n", movingCount(threshold, rows, cols), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		E13_RobotMove exam = new E13_RobotMove();
 
-		System.out.println(exam.movingCount(5, 10, 10) + "[21]");
-		System.out.println(exam.movingCount(15, 20, 20) + "[359]");
-		System.out.println(exam.movingCount(10, 1, 100) + "[29]");
-		System.out.println(exam.movingCount(10, 1, 10) + "[10]");
-		System.out.println(exam.movingCount(15, 100, 1) + "[79]");
-		System.out.println(exam.movingCount(15, 10, 1) + "[10]");
-		System.out.println(exam.movingCount(5, 10, 10) + "[21]");
-		System.out.println(exam.movingCount(12, 1, 1) + "[1]");
-		System.out.println(exam.movingCount(-10, 10, 10) + "[0]");
+		exam.test("Test1", 5, 10, 10, 21);// 方格多行多列
+		exam.test("Test2", 15, 20, 20, 359);// 方格多行多列
+		exam.test("Test3", 10, 1, 100, 29);// 方格只有一行，机器人只能到达部分方格
+		exam.test("Test4", 10, 1, 10, 10);// 方格只有一行，机器人能到达所有方格
+		exam.test("Test5", 15, 100, 1, 79);// 方格只有一列，机器人只能到达部分方格
+		exam.test("Test6", 15, 10, 1, 10);// 方格只有一列，机器人能到达所有方格
+		exam.test("Test7", 15, 1, 1, 1);// 方格只有一行一列
+		exam.test("Test8", 0, 1, 1, 1);// 方格只有一行一列
+		exam.test("Test9", -10, 10, 10, 0);// 机器人不能进入任意一个方格
+
 	}
 }

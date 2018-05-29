@@ -68,17 +68,127 @@ public class E12_StringPathInMatrix {
 		return hasPath;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, String matrix, int rows, int cols, String str, boolean expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("矩阵中的是否包含路径：Result:%b \t Expect:%b\n\n",
+					hasPath(matrix == null ? null : matrix.toCharArray(), rows, cols,
+							str == null ? null : str.toCharArray()),
+					expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	// ABTG
+	// CFCS
+	// JDEH
+	private void test1() {
+
+		test("Test1", "ABTGCFCSJDEH", 3, 4, "BFCE", true);
+	}
+
+	// ABCE
+	// SFCS
+	// ADEE
+	private void test2() {
+
+		test("Test2", "ABCESFCSADEE", 3, 4, "SEE", true);
+	}
+
+	// ABTG
+	// CFCS
+	// JDEH
+	private void test3() {
+
+		test("Test3", "ABTGCFCSJDEH", 3, 4, "ABFB", false);
+	}
+
+	// ABCEHJIG
+	// SFCSLOPQ
+	// ADEEMNOE
+	// ADIDEJFM
+	// VCEIFGGS
+	private void test4() {
+
+		test("Test4", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SLHECCEIDEJFGGFIE", true);
+	}
+
+	// ABCEHJIG
+	// SFCSLOPQ
+	// ADEEMNOE
+	// ADIDEJFM
+	// VCEIFGGS
+	private void test5() {
+
+		test("Test5", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SGGFIECVAASABCEHJIGQEM", true);
+	}
+
+	// ABCEHJIG
+	// SFCSLOPQ
+	// ADEEMNOE
+	// ADIDEJFM
+	// VCEIFGGS
+	private void test6() {
+
+		test("Test6", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SGGFIECVAASABCEEJIGOEM", false);
+	}
+
+	// ABCEHJIG
+	// SFCSLOPQ
+	// ADEEMNOE
+	// ADIDEJFM
+	// VCEIFGGS
+	private void test7() {
+		test("Test7", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SGGFIECVAASABCEHJIGQEMS", false);
+	}
+
+	// AAAA
+	// AAAA
+	// AAAA
+	private void test8() {
+		test("Test8", "AAAAAAAAAAAA", 3, 4, "AAAAAAAAAAAA", true);
+	}
+
+	// AAAA
+	// AAAA
+	// AAAA
+	private void test9() {
+		test("Test9", "AAAAAAAAAAAA", 3, 4, "AAAAAAAAAAAAA", false);
+	}
+
+	// A
+	private void test10() {
+		test("Test10", "A", 1, 1, "A", true);
+	}
+
+	// A
+	private void test11() {
+		test("Test11", "A", 1, 1, "B", false);
+	}
+
+	// 空
+	private void test12() {
+		test("Test12", null, 0, 0, null, false);
+	}
+
 	public static void main(String[] args) {
 
 		E12_StringPathInMatrix exam = new E12_StringPathInMatrix();
 
-		/*
-		 * 输入矩阵
-		 * abce
-		 * sfcs
-		 * adee
-		 */
-		System.out.println(exam.hasPath("abcesfcsadee".toCharArray(), 3, 4, "bcced".toCharArray()) + "[true]");
-		System.out.println(exam.hasPath("abcesfcsadee".toCharArray(), 3, 4, "abcb".toCharArray()) + "[false]");
+		exam.test1();
+		exam.test2();
+		exam.test3();
+		exam.test4();
+		exam.test5();
+		exam.test6();
+		exam.test7();
+		exam.test8();
+		exam.test9();
+		exam.test10();
+		exam.test11();
+		exam.test12();
+
 	}
 }

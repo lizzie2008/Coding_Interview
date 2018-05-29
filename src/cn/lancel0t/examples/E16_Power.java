@@ -13,13 +13,8 @@ public class E16_Power {
 	public double Power(double base, int exponent) {
 
 		// 指数和底数同时为0
-		if (base == 0 && exponent == 0) {
+		if (base == 0 && exponent < 0) {
 			return 0;
-		}
-
-		// 指数为0就返回1
-		if (exponent == 0) {
-			return 1;
 		}
 
 		// 求指数的绝对值
@@ -66,16 +61,26 @@ public class E16_Power {
 		return result;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, double base, int exponent, double expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("数值的整数次方：Result:%f \t Expect:%f\n\n", Power(base, exponent), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		E16_Power exam = new E16_Power();
 
-		System.out.println(exam.Power(2, 3) + "[8.0]");
-		System.out.println(exam.Power(-2, 3) + "[-8.0]");
-		System.out.println(exam.Power(2, -3) + "[0.125]");
-		System.out.println(exam.Power(2, 0) + "[1.0]");
-		System.out.println(exam.Power(0, 0) + "[0.0]");
-		System.out.println(exam.Power(0, 4) + "[0.0]");
-		System.out.println(exam.Power(0, -4) + "[Infinity]");
+		exam.test("test1", 2, 3, 8);
+		exam.test("test2", -2, 3, -8);
+		exam.test("test3", 2, -3, 0.125);
+		exam.test("test4", 2, 0, 1);
+		exam.test("test5", 0, 0, 1);
+		exam.test("test6", 0, 4, 0);
+		exam.test("test7", 0, -4, 0);
 	}
 }

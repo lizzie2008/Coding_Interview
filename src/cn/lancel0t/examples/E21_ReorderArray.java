@@ -60,27 +60,45 @@ public class E21_ReorderArray {
 		}
 	}
 
-	private void test(int[] array) {
-		reOrderArray(array);
-		if (array != null) {
-			System.out.print("===调整后数组：");
-			for (int i : array) {
-				System.out.print(i + " ");
+	// ====================测试代码====================
+	private void test(String testName, int[] array) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.print("调整前数组：");
+			if (array != null) {
+				for (int i : array) {
+					System.out.print(i + " ");
+				}
+				System.out.println();
+			} else {
+				System.out.println("∅");
 			}
-			System.out.println();
+			reOrderArray(array);
+			System.out.print("调整后数组：");
+			if (array != null) {
+				for (int i : array) {
+					System.out.print(i + " ");
+				}
+				System.out.println();
+			} else {
+				System.out.println("∅");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 
 		E21_ReorderArray exam = new E21_ReorderArray();
 
-		exam.test(new int[] { 1, 2, 3, 4, 5, 6, 7 });
-		exam.test(new int[] { 2, 4, 6, 1, 3, 5, 7 });
-		exam.test(new int[] { 1, 3, 5, 7, 2, 4, 6 });
-		exam.test(new int[] { 1 });
-		exam.test(new int[] { 2 });
-		exam.test(null);
+		exam.test("test1", new int[] { 1, 2, 3, 4, 5, 6, 7 });
+		exam.test("test2", new int[] { 2, 4, 6, 1, 3, 5, 7 });
+		exam.test("test3", new int[] { 1, 3, 5, 7, 2, 4, 6 });
+		exam.test("test4", new int[] { 1 });
+		exam.test("test5", new int[] { 2 });
+		exam.test("test6", null);
 
 	}
 }

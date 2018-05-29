@@ -75,6 +75,21 @@ public class E27_MirrorOfBinaryTree {
 		}
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, TreeNode root) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.println("镜像前：");
+			TreeNode.printTree(root);
+			System.out.println("镜像后：");
+			Mirror(root);
+			TreeNode.printTree(root);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println();
+	}
+	
 	/*
 	 * 测试完全二叉树：除了叶子节点，其他节点都有两个子节点
 	 *            8
@@ -94,13 +109,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
 		TreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
 
-		System.out.println("=====Test1=====");
-		System.out.println("镜像前：");
-		TreeNode.printTree(pNode8);
-		System.out.println("镜像后：");
-		Mirror(pNode8);
-		TreeNode.printTree(pNode8);
-
+		test("test1",pNode8);
 	}
 
 	/*
@@ -123,13 +132,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, pNode5, null);
 		TreeNode.connectTreeNodes(pNode5, pNode4, null);
 
-		System.out.println("=====Test2=====");
-		System.out.println("镜像前：");
-		TreeNode.printTree(pNode8);
-		System.out.println("镜像后：");
-		Mirror(pNode8);
-		TreeNode.printTree(pNode8);
-
+		test("test2",pNode8);
 	}
 
 	/*
@@ -152,13 +155,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, null, pNode5);
 		TreeNode.connectTreeNodes(pNode5, null, pNode4);
 
-		System.out.println("=====Test3=====");
-		System.out.println("镜像前：");
-		TreeNode.printTree(pNode8);
-		System.out.println("镜像后：");
-		Mirror(pNode8);
-		TreeNode.printTree(pNode8);
-
+		test("test3",pNode8);
 	}
 
 	/*
@@ -167,13 +164,7 @@ public class E27_MirrorOfBinaryTree {
 	private void test4() {
 		TreeNode pNode = null;
 
-		System.out.println("=====Test4=====");
-		System.out.println("镜像前：");
-		TreeNode.printTree(pNode);
-		System.out.println("镜像后：");
-		Mirror(pNode);
-		TreeNode.printTree(pNode);
-
+		test("test4",pNode);
 	}
 
 	/*
@@ -182,13 +173,7 @@ public class E27_MirrorOfBinaryTree {
 	private void test5() {
 		TreeNode pNode8 = new TreeNode(8);
 
-		System.out.println("=====Test5=====");
-		System.out.println("镜像前：");
-		TreeNode.printTree(pNode8);
-		System.out.println("镜像后：");
-		Mirror(pNode8);
-		TreeNode.printTree(pNode8);
-
+		test("test5",pNode8);
 	}
 
 	public static void main(String[] args) {

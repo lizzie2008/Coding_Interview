@@ -49,31 +49,33 @@ public class E03_DuplicationInArray {
 		}
 		return false;
 	}
-
-	private void test(int numbers[], int expect) {
+	// ====================测试代码====================
+	private void test(String testName, int numbers[], int expect) {
+		System.out.println(testName);
 		int[] duplication = new int[1];
 		int length = numbers == null ? 0 : numbers.length;
 		if (duplicate(numbers, length, duplication))
-			System.out.printf("含有重复元素：Result:%d\t Expect:%d\n", duplication[0], expect);
+			System.out.printf("含有重复元素：Result:%d \t Expect:%d\n", duplication[0], expect);
 		else
 			System.out.println("没有重复元素。");
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 		E03_DuplicationInArray exam = new E03_DuplicationInArray();
 
 		// 重复的数字是数组中最小的数字
-		exam.test(new int[] { 2, 1, 3, 1, 4 }, 1);
+		exam.test("=====Test1=====", new int[] { 2, 1, 3, 1, 4 }, 1);
 		// 重复的数字是数组中最大的数字
-		exam.test(new int[] { 2, 4, 3, 1, 4 }, 4);
+		exam.test("=====Test2=====", new int[] { 2, 4, 3, 1, 4 }, 4);
 		// 数组中存在多个重复的数字
-		exam.test(new int[] { 2, 4, 2, 1, 4 }, 2);
+		exam.test("=====Test3=====", new int[] { 2, 4, 2, 1, 4 }, 2);
 		// 没有重复的数字
-		exam.test(new int[] { 2, 1, 3, 0, 4 }, -1);
+		exam.test("=====Test4=====", new int[] { 2, 1, 3, 0, 4 }, -1);
 		// 数字范围不在0~n-1
-		exam.test(new int[] { 2, 1, 3, 5, 4 }, -1);
+		exam.test("=====Test5=====", new int[] { 2, 1, 3, 5, 4 }, -1);
 		// 无效的输入
-		exam.test(null, -1);
+		exam.test("=====Test6=====", null, -1);
 	}
 
 }

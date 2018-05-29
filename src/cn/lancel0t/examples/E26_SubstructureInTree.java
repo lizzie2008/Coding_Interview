@@ -54,6 +54,17 @@ public class E26_SubstructureInTree {
 		return false;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, TreeNode node1, TreeNode node2, boolean expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("是否是树的子结构：Result:%b \t Expect:%b\n", HasSubtree(node1, node2), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println();
+	}
+
 	/*
 	 * 树中结点含有分叉，树B是树A的子结构
 	 *       8             8
@@ -83,7 +94,7 @@ public class E26_SubstructureInTree {
 
 		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
-		System.out.printf("=====Test1===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), true);
+		test("test1", pNodeA1, pNodeB1, true);
 	}
 
 	/*
@@ -115,7 +126,7 @@ public class E26_SubstructureInTree {
 
 		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
-		System.out.printf("=====Test2===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), false);
+		test("test2", pNodeA1, pNodeB1, false);
 	}
 
 	/*
@@ -149,7 +160,7 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
 		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
 
-		System.out.printf("=====Test3===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), true);
+		test("test3", pNodeA1, pNodeB1, true);
 	}
 
 	/*
@@ -183,7 +194,7 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
 		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
 
-		System.out.printf("=====Test4===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), false);
+		test("test4", pNodeA1, pNodeB1, false);
 	}
 
 	/*
@@ -217,7 +228,7 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
 		TreeNode.connectTreeNodes(pNodeB2, null, pNodeB3);
 
-		System.out.printf("=====Test5===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), true);
+		test("test5", pNodeA1, pNodeB1, true);
 	}
 
 	/*
@@ -252,7 +263,7 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
 		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
-		System.out.printf("=====Test6===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, pNodeB1), false);
+		test("test6", pNodeA1, pNodeB1, false);
 	}
 
 	/*
@@ -268,7 +279,7 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
 		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
-		System.out.printf("=====Test7===== \nResult:%b \nExpect:%b\n", HasSubtree(null, pNodeB1), false);
+		test("test7", null, pNodeB1, false);
 	}
 
 	/*
@@ -284,15 +295,14 @@ public class E26_SubstructureInTree {
 		TreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
 		TreeNode.connectTreeNodes(pNodeA2, pNodeA3, pNodeA4);
 
-		System.out.printf("=====Test8===== \nResult:%b \nExpect:%b\n", HasSubtree(pNodeA1, null), false);
+		test("test8", pNodeA1, null, false);
 	}
 
 	/*
 	 * 树A,B都为空树
 	 */
 	private void test9() {
-
-		System.out.printf("=====Test9===== \nResult:%b \nExpect:%b\n", HasSubtree(null, null), false);
+		test("test9", null, null, false);
 	}
 
 	public static void main(String[] args) {

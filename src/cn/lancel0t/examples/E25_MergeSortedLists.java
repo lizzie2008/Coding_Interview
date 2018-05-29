@@ -73,6 +73,21 @@ public class E25_MergeSortedLists {
 		return tempNode.next;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, ListNode node1, ListNode node2) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.print("链表链表1：");
+			ListNode.print(node1);
+			System.out.print("链表链表2：");
+			ListNode.print(node2);
+			System.out.print("合并后链表：");
+			ListNode.print(Merge(node1, node2));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println();
+	}
 
 	// list1: 1->3->5
 	// list2: 2->4->6
@@ -89,13 +104,7 @@ public class E25_MergeSortedLists {
 		node2.next = node4;
 		node4.next = node6;
 
-		System.out.println("=====Test1=====");
-		System.out.print("链表链表1：");
-		ListNode.print(node1);
-		System.out.print("链表链表2：");
-		ListNode.print(node2);
-		System.out.print("合并后链表：");
-		ListNode.print(Merge(node1, node2));
+		test("test1", node1, node2);
 	}
 
 	// list1: 1->3->5
@@ -113,13 +122,7 @@ public class E25_MergeSortedLists {
 		node2.next = node4;
 		node4.next = node6;
 
-		System.out.println("=====Test2=====");
-		System.out.print("链表链表1：");
-		ListNode.print(node1);
-		System.out.print("链表链表2：");
-		ListNode.print(node2);
-		System.out.print("合并后链表：");
-		ListNode.print(Merge(node1, node2));
+		test("test2", node1, node2);
 	}
 
 	// list1: 1
@@ -128,13 +131,7 @@ public class E25_MergeSortedLists {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
 
-		System.out.println("=====Test3=====");
-		System.out.print("链表链表1：");
-		ListNode.print(node1);
-		System.out.print("链表链表2：");
-		ListNode.print(node2);
-		System.out.print("合并后链表：");
-		ListNode.print(Merge(node1, node2));
+		test("test3", node1, node2);
 	}
 
 	// list1: 1
@@ -143,13 +140,7 @@ public class E25_MergeSortedLists {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = null;
 
-		System.out.println("=====Test4=====");
-		System.out.print("链表链表1：");
-		ListNode.print(node1);
-		System.out.print("链表链表2：");
-		ListNode.print(node2);
-		System.out.print("合并后链表：");
-		ListNode.print(Merge(node1, node2));
+		test("test4", node1, node2);
 	}
 
 	// list1: ∅
@@ -158,13 +149,7 @@ public class E25_MergeSortedLists {
 		ListNode node1 = null;
 		ListNode node2 = null;
 
-		System.out.println("=====Test5=====");
-		System.out.print("链表链表1：");
-		ListNode.print(node1);
-		System.out.print("链表链表2：");
-		ListNode.print(node2);
-		System.out.print("合并后链表：");
-		ListNode.print(Merge(node1, node2));
+		test("test5", node1, node2);
 	}
 
 	public static void main(String[] args) {

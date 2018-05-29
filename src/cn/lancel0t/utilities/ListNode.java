@@ -15,6 +15,16 @@ public class ListNode {
 		this.val = val;
 	}
 
+	public static void connectListNodes(ListNode pCurrent, ListNode pNext)
+	{
+	    if(pCurrent == null)
+	    {
+	      return;
+	    }
+
+	    pCurrent.next = pNext;
+	}
+
 	public static void print(ListNode head) {
 		if (head == null) {
 			System.out.println("∅");

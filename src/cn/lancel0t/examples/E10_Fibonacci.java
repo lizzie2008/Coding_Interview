@@ -65,6 +65,7 @@ public class E10_Fibonacci {
 		return RectCover(target - 1) + RectCover(target - 2);
 	}
 
+	// ====================测试代码====================
 	public static void main(String[] args) {
 
 		E10_Fibonacci exam = new E10_Fibonacci();

@@ -38,8 +38,10 @@ public class E04_FindInPartiallySortedMatrix {
 		return false;
 	}
 
-	private void test(int target, int[][] array, boolean expect) {
-		System.out.printf("二维数组中的查找：Result:%b\t Expect:%b\n\n", Find(target, array), expect);
+	// ====================测试代码====================
+	private void test(String testName, int target, int[][] array, boolean expect) {
+		System.out.println(testName);
+		System.out.printf("二维数组中的查找：Result:%b \t Expect:%b\n\n", Find(target, array), expect);
 	}
 
 	public static void main(String[] args) {
@@ -51,8 +53,7 @@ public class E04_FindInPartiallySortedMatrix {
 		// 6 8 11 15
 		// 要查找的数在数组中
 		int[][] matrix1 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test1=====");
-		exam.test(7, matrix1, true);
+		exam.test("=====Test1=====", 7, matrix1, true);
 
 		// 1 2 8 9
 		// 2 4 9 12
@@ -60,8 +61,7 @@ public class E04_FindInPartiallySortedMatrix {
 		// 6 8 11 15
 		// 要查找的数不在数组中
 		int[][] matrix2 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test2=====");
-		exam.test(5, matrix2, false);
+		exam.test("=====Test2=====", 5, matrix2, false);
 
 		// 1 2 8 9
 		// 2 4 9 12
@@ -69,8 +69,7 @@ public class E04_FindInPartiallySortedMatrix {
 		// 6 8 11 15
 		// 要查找的数是数组中最小的数字
 		int[][] matrix3 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test3=====");
-		exam.test(1, matrix3, true);
+		exam.test("=====Test3=====", 1, matrix3, true);
 
 		// 1 2 8 9
 		// 2 4 9 12
@@ -78,30 +77,26 @@ public class E04_FindInPartiallySortedMatrix {
 		// 6 8 11 15
 		// 要查找的数是数组中最大的数字
 		int[][] matrix4 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test4=====");
-		exam.test(15, matrix4, true);
-		
+		exam.test("=====Test4=====", 15, matrix4, true);
+
 		// 1 2 8 9
 		// 2 4 9 12
 		// 4 7 10 13
 		// 6 8 11 15
 		// 要查找的数比数组中最小的数字还小
 		int[][] matrix5 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test5=====");
-		exam.test(0, matrix5, false);
-		
+		exam.test("=====Test5=====", 0, matrix5, false);
+
 		// 1 2 8 9
 		// 2 4 9 12
 		// 4 7 10 13
 		// 6 8 11 15
 		// 要查找的数比数组中最大的数字还大
 		int[][] matrix6 = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
-		System.out.println("=====Test6=====");
-		exam.test(16, matrix6, false);
-		
+		exam.test("=====Test6=====", 16, matrix6, false);
+
 		// 鲁棒性测试，输入空指针
-		System.out.println("=====Test7=====");
-		exam.test(16, null, false);
+		exam.test("=====Test7=====", 16, null, false);
 	}
 
 }

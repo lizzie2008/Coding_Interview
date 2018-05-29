@@ -50,20 +50,30 @@ public class E14_CuttingRope {
 		return f[length];
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, int length, int expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("最大乘积是：Result:%d \t Expect:%d\n\n", maxAfterCutting(length), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		E14_CuttingRope exam = new E14_CuttingRope();
 
-		System.out.println(exam.maxAfterCutting(1) + "[0]");
-		System.out.println(exam.maxAfterCutting(2) + "[1]");
-		System.out.println(exam.maxAfterCutting(3) + "[2]");
-		System.out.println(exam.maxAfterCutting(4) + "[4]");
-		System.out.println(exam.maxAfterCutting(5) + "[6]");
-		System.out.println(exam.maxAfterCutting(6) + "[9]");
-		System.out.println(exam.maxAfterCutting(7) + "[12]");
-		System.out.println(exam.maxAfterCutting(9) + "[27]");
-		System.out.println(exam.maxAfterCutting(10) + "[36]");
-		System.out.println(exam.maxAfterCutting(50) + "[86093442]");
-
+		exam.test("test1", 1, 0);
+		exam.test("test2", 2, 1);
+		exam.test("test3", 3, 2);
+		exam.test("test4", 4, 4);
+		exam.test("test5", 5, 6);
+		exam.test("test6", 6, 9);
+		exam.test("test7", 7, 12);
+		exam.test("test8", 8, 18);
+		exam.test("test9", 9, 27);
+		exam.test("test10", 10, 36);
+		exam.test("test11", 50, 86093442);
 	}
 }

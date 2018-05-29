@@ -39,22 +39,27 @@ public class E15_NumberOf1InBinary {
 		return count;
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, int n, int expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("二进制：%s\n",Integer.toBinaryString(n));
+			System.out.printf("二进制中1 的个数：Result:%d \t Expect:%d\n\n", NumberOf1(n), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		E15_NumberOf1InBinary exam = new E15_NumberOf1InBinary();
 
-		System.out.println("===算法1输出：");
-		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000000) + "[0]"); // 0
-		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000001) + "[1]"); // 1
-		System.out.println(exam.NumberOf1I(0B11111111_11111111_11111111_11111111) + "[32]"); // -1
-		System.out.println(exam.NumberOf1I(0B01111111_11111111_11111111_11111111) + "[31]"); // Integer.MAX_VALUE
-		System.out.println(exam.NumberOf1I(0B10000000_00000000_00000000_00000000) + "[1]"); // Integer.MIN_VALUE
-		System.out.println("===算法2输出：");
-		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000000) + "[0]"); // 0
-		System.out.println(exam.NumberOf1(0B00000000_00000000_00000000_00000001) + "[1]"); // 1
-		System.out.println(exam.NumberOf1(0B11111111_11111111_11111111_11111111) + "[32]"); // -1
-		System.out.println(exam.NumberOf1(0B01111111_11111111_11111111_11111111) + "[31]"); // Integer.MAX_VALUE
-		System.out.println(exam.NumberOf1(0B10000000_00000000_00000000_00000000) + "[1]"); // Integer.MIN_VALUE
+		exam.test("test1", 0, 0);
+		exam.test("test2", 1, 1);
+		exam.test("test3", 10, 2);
+		exam.test("test4", 0x7FFFFFFF, 31);
+		exam.test("test5", 0xFFFFFFFF, 32);
+		exam.test("test6", 0x80000000, 1);
 
 	}
 }

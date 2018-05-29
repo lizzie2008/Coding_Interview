@@ -44,36 +44,111 @@ public class E22_KthNodeFromEnd {
 		return point2;
 	}
 
-	public static void main(String[] args) {
+	// ====================测试代码====================
+	private void test(String testName, ListNode head, int k, String expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			ListNode node = FindKthToTail(head, k);
+			System.out.printf("倒数第%d个结点：Result:%s \t Expect:%s\n\n", k, node == null ? "∅" : node.val, expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
-		E22_KthNodeFromEnd exam = new E22_KthNodeFromEnd();
-
+	// 测试要找的结点在链表中间
+	private void test1() {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
 		ListNode node3 = new ListNode(3);
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
 
-		node1.next = node2;
-		node2.next = node3;
-		node3.next = node4;
-		node4.next = node5;
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
 
-		System.out.println("=====Test1=====");
-		System.out.printf("倒数第2个节点应该是：%s [4]\n\n", exam.FindKthToTail(node1, 2).val);
+		test("test1", node1, 2, "4");
+	}
 
-		System.out.println("=====Test2=====");
-		System.out.printf("倒数第5个节点应该是：%s [5]\n\n", exam.FindKthToTail(node1, 1).val);
+	// 测试要找的结点是链表的尾结点
+	private void test2() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
 
-		System.out.println("=====Test3=====");
-		System.out.printf("倒数第1个节点应该是：%s [1]\n\n", exam.FindKthToTail(node1, 5).val);
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
 
-		System.out.println("=====Test4=====");
-		System.out.printf("倒数第100个节点应该是：%s [null]\n\n",
-				exam.FindKthToTail(null, 100) == null ? "null" : exam.FindKthToTail(null, 100));
+		test("test2", node1, 1, "5");
+	}
 
-		System.out.println("=====Test5=====");
-		System.out.printf("倒数第0个节点应该是：%s [null]\n\n",
-				exam.FindKthToTail(node1, 0) == null ? "null" : exam.FindKthToTail(node1, 0));
+	// 测试要找的结点是链表的头结点
+	private void test3() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+
+		test("test3", node1, 5, "1");
+	}
+
+	// 测试空链表
+	private void test4() {
+		test("test4", null, 100, "∅");
+	}
+
+	// 测试输入的第二个参数大于链表的结点总数
+	private void test5() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+
+		test("test5", node1, 6, "∅");
+	}
+
+	// 测试输入的第二个参数为0
+	private void test6() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+
+		test("test6", node1, 0, "∅");
+	}
+
+	public static void main(String[] args) {
+
+		E22_KthNodeFromEnd exam = new E22_KthNodeFromEnd();
+
+		exam.test1();
+		exam.test2();
+		exam.test3();
+		exam.test4();
+		exam.test5();
+		exam.test6();
 	}
 }

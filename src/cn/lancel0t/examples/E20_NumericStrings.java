@@ -67,37 +67,44 @@ public class E20_NumericStrings {
 		return index > before;
 	}
 
-	private void test(String str, boolean expect) {
-		System.out.printf("验证结果：%b [%b]\n", isNumeric(str == null ? null : str.toCharArray()), expect);
+	// ====================测试代码====================
+	private void test(String testName, String str, boolean expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("验证结果：Result:%b \t Expect:%b\n\n", isNumeric(str == null ? null : str.toCharArray()),
+					expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void main(String[] args) {
 
 		E20_NumericStrings exam = new E20_NumericStrings();
 
-		exam.test("100", true);
-		exam.test("123.45e+6", true);
-		exam.test("+500", true);
-		exam.test("5e2", true);
-		exam.test("3.1416", true);
-		exam.test("600.", true);
-		exam.test("-.123", true);
-		exam.test("-1E-16", true);
-		exam.test("1.79769313486232E+308", true);
+		exam.test("test1", "100", true);
+		exam.test("test2", "123.45e+6", true);
+		exam.test("test3", "+500", true);
+		exam.test("test4", "5e2", true);
+		exam.test("test5", "3.1416", true);
+		exam.test("test6", "600.", true);
+		exam.test("test7", "-.123", true);
+		exam.test("test8", "-1E-16", true);
+		exam.test("test9", "1.79769313486232E+308", true);
 
-		exam.test("12e", false);
-		exam.test("1a3.14", false);
-		exam.test("1+23", false);
-		exam.test("1.2.3", false);
-		exam.test("+-5", false);
-		exam.test("12e+5.4", false);
+		exam.test("test10", "12e", false);
+		exam.test("test11", "1a3.14", false);
+		exam.test("test12", "1+23", false);
+		exam.test("test13", "1.2.3", false);
+		exam.test("test14", "+-5", false);
+		exam.test("test15", "12e+5.4", false);
 
-		exam.test(".", false);
-		exam.test(".e1", false);
-		exam.test("e1", false);
-		exam.test("+.", false);
+		exam.test("test16", ".", false);
+		exam.test("test17", ".e1", false);
+		exam.test("test18", "e1", false);
+		exam.test("test19", "+.", false);
 
-		exam.test("", false);
-		exam.test(null, false);
+		exam.test("test20", "", false);
+		exam.test("test21", null, false);
 	}
 }

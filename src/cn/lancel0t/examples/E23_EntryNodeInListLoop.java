@@ -23,7 +23,7 @@ public class E23_EntryNodeInListLoop {
 	 */
 	public ListNode EntryNodeOfLoop(ListNode pHead) {
 
-		if (pHead.next == null)
+		if (pHead == null)
 			return null;
 
 		ListNode pSlow = pHead;
@@ -54,43 +54,114 @@ public class E23_EntryNodeInListLoop {
 		return pSlow;
 	}
 
-	public static void main(String[] args) {
+	// ====================测试代码====================
+	private void test(String testName, ListNode head, String expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			ListNode node = EntryNodeOfLoop(head);
+			System.out.printf("链表中环的入口结点：Result:%s \t Expect:%s\n\n", node == null ? "∅" : node.val, expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
-		E23_EntryNodeInListLoop exam = new E23_EntryNodeInListLoop();
+	// 单个节点，没有环
+	private void test1() {
+		ListNode node1 = new ListNode(1);
 
+		test("test1", node1, "∅");
+	}
+
+	// 单个节点，有环
+	private void test2() {
+		ListNode node1 = new ListNode(1);
+		ListNode.connectListNodes(node1, node1);
+
+		test("test2", node1, "1");
+	}
+
+	// 多个节点，有环
+	private void test3() {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
 		ListNode node3 = new ListNode(3);
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
 
-		node1.next = node2;
-		node2.next = node3;
-		node3.next = node4;
-		node4.next = node5;
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+		ListNode.connectListNodes(node5, node3);
 
-		node5.next = node3;
-		System.out.println("=====Test1=====");
-		System.out.printf("环的入口结点是：%s [3]\n\n",
-				exam.EntryNodeOfLoop(node1) == null ? "null" : exam.EntryNodeOfLoop(node1).val);
+		test("test3", node1, "3");
+	}
 
-		node5.next = node1;
-		System.out.println("=====Test2=====");
-		System.out.printf("环的入口结点是：%s [1]\n\n",
-				exam.EntryNodeOfLoop(node1) == null ? "null" : exam.EntryNodeOfLoop(node1).val);
+	// 多个节点，有环
+	private void test4() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
 
-		node5.next = node5;
-		System.out.println("=====Test3=====");
-		System.out.printf("环的入口结点是：%s [5]\n\n",
-				exam.EntryNodeOfLoop(node1) == null ? "null" : exam.EntryNodeOfLoop(node1).val);
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+		ListNode.connectListNodes(node5, node1);
 
-		node5.next = null;
-		System.out.println("=====Test4====");
-		System.out.printf("环的入口结点是：%s [null]\n\n",
-				exam.EntryNodeOfLoop(node1) == null ? "null" : exam.EntryNodeOfLoop(node1).val);
+		test("test4", node1, "1");
+	}
 
-		System.out.println("=====Test5====");
-		System.out.printf("环的入口结点是：%s [null]\n\n",
-				exam.EntryNodeOfLoop(node1) == null ? "null" : exam.EntryNodeOfLoop(null).val);
+	// 多个节点，有环
+	private void test5() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+		ListNode.connectListNodes(node5, node5);
+
+		test("test5", node1, "5");
+	}
+
+	// 多个节点，没有环
+	private void test6() {
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		ListNode.connectListNodes(node1, node2);
+		ListNode.connectListNodes(node2, node3);
+		ListNode.connectListNodes(node3, node4);
+		ListNode.connectListNodes(node4, node5);
+
+		test("test6", node1, "∅");
+	}
+
+	// 空链表
+	private void test7() {
+		test("test7", null, "∅");
+	}
+
+	public static void main(String[] args) {
+
+		E23_EntryNodeInListLoop exam = new E23_EntryNodeInListLoop();
+
+		exam.test1();
+		exam.test2();
+		exam.test3();
+		exam.test4();
+		exam.test5();
+		exam.test6();
+		exam.test7();
 	}
 }

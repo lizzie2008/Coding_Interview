@@ -39,7 +39,7 @@ public class E07_ConstructBinaryTree {
 			index++;
 
 		if (index > inEnd) {
-			throw new RuntimeException("Invalid input");
+			throw new RuntimeException("无法重建二叉树，请检查输入的参数是否合法！");
 		}
 
 		TreeNode root = new TreeNode(rootVal);
@@ -56,25 +56,126 @@ public class E07_ConstructBinaryTree {
 		return root;
 	}
 
-	// 中序遍历打印树
-	public void printTree(TreeNode root) {
-		if (root != null) {
-			printTree(root.left);
-			System.out.print(root.val + " ");
-			printTree(root.right);
+	// ====================测试代码====================
+	private void test(String testName, int[] pre, int[] in) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.println("重建二叉树：");
+			TreeNode root = reConstructBinaryTree(pre, in);
+			TreeNode.printTree(root);
+			System.out.println("");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
+	}
 
+	/*
+	 * 普通二叉树
+	 *        1
+	 *     /     \
+	 *    2       3  
+	 *   /       / \
+	 *  4       5   6
+	 *   \         /
+	 *    7       8
+	 */
+	private void test1() {
+		int[] preorder = { 1, 2, 4, 7, 3, 5, 6, 8 };
+		int[] inorder = { 4, 7, 2, 1, 5, 3, 8, 6 };
+
+		test("Test1", preorder, inorder);
+	}
+
+	/*
+	 * 所有结点都没有右子结点
+	 *          1
+	 *         / 
+	 *        2   
+	 *       / 
+	 *      3 
+	 *     /
+	 *    4
+	 *   /
+	 *  5
+	 */
+	private void test2() {
+		int[] preorder = { 1, 2, 3, 4, 5 };
+		int[] inorder = { 5, 4, 3, 2, 1 };
+
+		test("Test2", preorder, inorder);
+	}
+
+	/*
+	 * 所有结点都没有左子结点
+	 *   1
+	 *    \ 
+	 *     2   
+	 *      \ 
+	 *       3 
+	 *        \
+	 *         4
+	 *          \
+	 *           5
+	 */
+	private void test3() {
+		int[] preorder = { 1, 2, 3, 4, 5 };
+		int[] inorder = { 1, 2, 3, 4, 5 };
+
+		test("Test3", preorder, inorder);
+	}
+
+	/*
+	 * 树中只有一个结点
+	 */
+	private void test4() {
+		int[] preorder = { 1 };
+		int[] inorder = { 1 };
+
+		test("Test4", preorder, inorder);
+	}
+
+	/*
+	 * 完全二叉树
+	 *        1
+	 *     /     \
+	 *    2       3  
+	 *   / \     / \
+	 *  4   5   6   7
+	 */
+	private void test5() {
+		int[] preorder = { 1, 2, 4, 5, 3, 6, 7 };
+		int[] inorder = { 4, 2, 5, 1, 6, 3, 7 };
+
+		test("Test5", preorder, inorder);
+	}
+
+	/*
+	 * 输入空指针
+	 */
+	private void test6() {
+		test("Test6", null, null);
+	}
+
+	/*
+	 * 输入的两个序列不匹配
+	 */
+	private void test7() {
+		int[] preorder = { 1, 2, 4, 5, 3, 6, 7 };
+		int[] inorder = { 4, 2, 8, 1, 6, 3, 7 };
+
+		test("Test7", preorder, inorder);
 	}
 
 	public static void main(String[] args) {
 
 		E07_ConstructBinaryTree exam = new E07_ConstructBinaryTree();
 
-		int[] preorder = { 10, 6, 4, 8, 14, 12, 16 };
-		int[] inorder = { 4, 6, 8, 10, 12, 14, 16 };
-		TreeNode root = exam.reConstructBinaryTree(preorder, inorder);
-		System.out.print("中序遍历：");
-		exam.printTree(root);
-		System.out.println("[4 6 8 10 12 14 16 ]");
+		exam.test1();
+		exam.test2();
+		exam.test3();
+		exam.test4();
+		exam.test5();
+		exam.test6();
+		exam.test7();
 	}
 }

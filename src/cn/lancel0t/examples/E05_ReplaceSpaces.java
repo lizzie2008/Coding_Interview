@@ -65,12 +65,13 @@ public class E05_ReplaceSpaces {
 		return newLength;
 	}
 
-	private void test(String str, String expect) {
-
+	// ====================测试代码====================
+	private void test(String testName, String str, String expect) {
+		System.out.println(testName);
 		char[] chars = toChars(str);
 		int ret = replaceSpace(chars, 100);
 		if (ret >= 0) {
-			System.out.printf("替换空格：Result:%s\t Expect:%s\n\n", new String(chars).substring(0, ret), expect);
+			System.out.printf("替换空格：Result:%s \t Expect:%s\n\n", new String(chars).substring(0, ret), expect);
 		} else
 			System.out.printf("替换空格：Result:%s\t Expect:%s\n\n", null, null);
 	}
@@ -94,40 +95,31 @@ public class E05_ReplaceSpaces {
 		E05_ReplaceSpaces exam = new E05_ReplaceSpaces();
 
 		// 空格在句子中间
-		System.out.println("=====Test1=====");
-		exam.test("hello world", "hello%20world");
+		exam.test("=====Test1=====", "hello world", "hello%20world");
 
 		// 空格在句子开头
-		System.out.println("=====Test2=====");
-		exam.test(" helloworld", "%20helloworld");
+		exam.test("=====Test2=====", " helloworld", "%20helloworld");
 
 		// 空格在句子末尾
-		System.out.println("=====Test3=====");
-		exam.test("helloworld ", "helloworld%20");
+		exam.test("=====Test3=====", "helloworld ", "helloworld%20");
 
 		// 连续有两个空格
-		System.out.println("=====Test4=====");
-		exam.test("hello  world", "hello%20%20world");
+		exam.test("=====Test4=====", "hello  world", "hello%20%20world");
 
 		// 传入null
-		System.out.println("=====Test5=====");
-		exam.test(null, null);
+		exam.test("=====Test5=====", null, null);
 
 		// 传入内容为空的字符串
-		System.out.println("=====Test6=====");
-		exam.test("", "");
+		exam.test("=====Test6=====", "", "");
 
 		// 传入内容为一个空格的字符串
-		System.out.println("=====Test7=====");
-		exam.test(" ", "%20");
+		exam.test("=====Test7=====", " ", "%20");
 
 		// 传入的字符串没有空格
-		System.out.println("=====Test8=====");
-		exam.test("helloworld", "helloworld");
+		exam.test("=====Test8=====", "helloworld", "helloworld");
 
 		// 传入的字符串全是空格
-		System.out.println("=====Test9=====");
-		exam.test("   ", "%20%20%20");
+		exam.test("=====Test9=====", "   ", "%20%20%20");
 	}
 
 }

@@ -56,62 +56,122 @@ public class E08_NextNodeInBinaryTrees {
 		return null;
 	}
 
-	public void assemble(TreeLinkNode node, TreeLinkNode left, TreeLinkNode right, TreeLinkNode parent) {
-		node.left = left;
-		node.right = right;
-		node.next = parent;
+	private void connectTreeNodes(TreeLinkNode node, TreeLinkNode left, TreeLinkNode right) {
+		if (node != null) {
+			node.left = left;
+			node.right = right;
+			if (left != null)
+				left.next = node;
+			if (right != null)
+				right.next = node;
+		}
+	}
+
+	// ====================测试代码====================
+	private void test(TreeLinkNode pNode, String expect) {
+		try {
+			TreeLinkNode node = GetNext(pNode);
+			System.out.printf("节点%s下一个结点：Result:%s \t Expect:%s\n", pNode.val, node == null ? "∅" : node.val, expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	/*
+	 *      8
+	 *  6      10
+	 * 5 7    9  11
+	 */
+	private void test1() {
+		TreeLinkNode pNode8 = new TreeLinkNode(8);
+		TreeLinkNode pNode6 = new TreeLinkNode(6);
+		TreeLinkNode pNode10 = new TreeLinkNode(10);
+		TreeLinkNode pNode5 = new TreeLinkNode(5);
+		TreeLinkNode pNode7 = new TreeLinkNode(7);
+		TreeLinkNode pNode9 = new TreeLinkNode(9);
+		TreeLinkNode pNode11 = new TreeLinkNode(11);
+
+		connectTreeNodes(pNode8, pNode6, pNode10);
+		connectTreeNodes(pNode6, pNode5, pNode7);
+		connectTreeNodes(pNode10, pNode9, pNode11);
+
+		System.out.println("=====Test1=====");
+		test(pNode8, "9");
+		test(pNode6, "7");
+		test(pNode10, "11");
+		test(pNode5, "6");
+		test(pNode7, "8");
+		test(pNode9, "10");
+		test(pNode11, "∅");
+		System.out.println();
+	}
+
+	/*
+	 *        5
+	 *      4
+	 *    3
+	 *  2
+	 */
+	private void test2() {
+		TreeLinkNode pNode5 = new TreeLinkNode(5);
+		TreeLinkNode pNode4 = new TreeLinkNode(4);
+		TreeLinkNode pNode3 = new TreeLinkNode(3);
+		TreeLinkNode pNode2 = new TreeLinkNode(2);
+
+		connectTreeNodes(pNode5, pNode4, null);
+		connectTreeNodes(pNode4, pNode3, null);
+		connectTreeNodes(pNode3, pNode2, null);
+
+		System.out.println("=====Test2=====");
+		test(pNode5, "∅");
+		test(pNode4, "5");
+		test(pNode3, "4");
+		test(pNode2, "3");
+		System.out.println();
+	}
+
+	/*
+	 *    2
+	 *     3
+	 *      4
+	 *       5
+	 */
+	private void test3() {
+		TreeLinkNode pNode2 = new TreeLinkNode(2);
+		TreeLinkNode pNode3 = new TreeLinkNode(3);
+		TreeLinkNode pNode4 = new TreeLinkNode(4);
+		TreeLinkNode pNode5 = new TreeLinkNode(5);
+
+		connectTreeNodes(pNode2, null, pNode3);
+		connectTreeNodes(pNode3, null, pNode4);
+		connectTreeNodes(pNode4, null, pNode5);
+
+		System.out.println("=====Test3=====");
+		test(pNode5, "∅");
+		test(pNode4, "5");
+		test(pNode3, "4");
+		test(pNode2, "3");
+		System.out.println();
+	}
+
+	/*
+	 *   单个节点 
+	 */
+	private void test4() {
+		TreeLinkNode pNode5 = new TreeLinkNode(5);
+
+		System.out.println("=====Test4=====");
+		test(pNode5, "∅");
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 
 		E08_NextNodeInBinaryTrees exam = new E08_NextNodeInBinaryTrees();
 
-		TreeLinkNode n1 = exam.new TreeLinkNode(1);
-		TreeLinkNode n2 = exam.new TreeLinkNode(2);
-		TreeLinkNode n3 = exam.new TreeLinkNode(3);
-		TreeLinkNode n4 = exam.new TreeLinkNode(4);
-		TreeLinkNode n5 = exam.new TreeLinkNode(5);
-		TreeLinkNode n6 = exam.new TreeLinkNode(6);
-		TreeLinkNode n7 = exam.new TreeLinkNode(7);
-		TreeLinkNode n8 = exam.new TreeLinkNode(8);
-		TreeLinkNode n9 = exam.new TreeLinkNode(9);
-		TreeLinkNode n10 = exam.new TreeLinkNode(10);
-		TreeLinkNode n11 = exam.new TreeLinkNode(11);
-		TreeLinkNode n12 = exam.new TreeLinkNode(12);
-		TreeLinkNode n13 = exam.new TreeLinkNode(13);
-		TreeLinkNode n14 = exam.new TreeLinkNode(14);
-		TreeLinkNode n15 = exam.new TreeLinkNode(15);
-
-		exam.assemble(n1, n2, n3, null);
-		exam.assemble(n2, n4, n5, n1);
-		exam.assemble(n3, n6, n7, n1);
-		exam.assemble(n4, n8, n9, n2);
-		exam.assemble(n5, n10, n11, n2);
-		exam.assemble(n6, n12, n13, n3);
-		exam.assemble(n7, n14, n15, n3);
-		exam.assemble(n8, null, null, n4);
-		exam.assemble(n9, null, null, n4);
-		exam.assemble(n10, null, null, n5);
-		exam.assemble(n11, null, null, n5);
-		exam.assemble(n12, null, null, n6);
-		exam.assemble(n13, null, null, n6);
-		exam.assemble(n14, null, null, n7);
-		exam.assemble(n15, null, null, n7);
-
-		System.out.println(exam.GetNext(n1).val + "[12]");
-		System.out.println(exam.GetNext(n2).val + "[10]");
-		System.out.println(exam.GetNext(n3).val + "[14]");
-		System.out.println(exam.GetNext(n4).val + "[9]");
-		System.out.println(exam.GetNext(n5).val + "[11]");
-		System.out.println(exam.GetNext(n6).val + "[13]");
-		System.out.println(exam.GetNext(n7).val + "[15]");
-		System.out.println(exam.GetNext(n8).val + "[4]");
-		System.out.println(exam.GetNext(n9).val + "[2]");
-		System.out.println(exam.GetNext(n10).val + "[5]");
-		System.out.println(exam.GetNext(n11).val + "[1]");
-		System.out.println(exam.GetNext(n12).val + "[6]");
-		System.out.println(exam.GetNext(n13).val + "[3]");
-		System.out.println(exam.GetNext(n14).val + "[7]");
-		// System.out.println(exam.GetNext(n15).val);
+		exam.test1();
+		exam.test2();
+		exam.test3();
+		exam.test4();
 	}
 }

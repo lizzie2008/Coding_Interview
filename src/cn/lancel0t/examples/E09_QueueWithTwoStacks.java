@@ -41,6 +41,7 @@ public class E09_QueueWithTwoStacks {
 		return stack2.pop();
 	}
 
+	// ====================测试代码====================
 	public static void main(String[] args) {
 
 		E09_QueueWithTwoStacks exam = new E09_QueueWithTwoStacks();
@@ -48,13 +49,15 @@ public class E09_QueueWithTwoStacks {
 		exam.push(1);
 		exam.push(2);
 		exam.push(3);
-		System.out.println("== 出队列：" + exam.pop() + "[1]");
+
+		System.out.printf("== 出队列：Result:%s \t Expect:%s\n", exam.pop(), "1");
+
 		exam.push(4);
 		exam.push(5);
-		System.out.println("== 出队列：" + exam.pop() + "[2]");
-		System.out.println("== 出队列：" + exam.pop() + "[3]");
-		System.out.println("== 出队列：" + exam.pop() + "[4]");
-		System.out.println("== 出队列：" + exam.pop() + "[5]");
 
+		System.out.printf("== 出队列：Result:%s\t Expect:%s\n", exam.pop(), "2");
+		System.out.printf("== 出队列：Result:%s\t Expect:%s\n", exam.pop(), "3");
+		System.out.printf("== 出队列：Result:%s\t Expect:%s\n", exam.pop(), "4");
+		System.out.printf("== 出队列：Result:%s\t Expect:%s\n", exam.pop(), "5");
 	}
 }

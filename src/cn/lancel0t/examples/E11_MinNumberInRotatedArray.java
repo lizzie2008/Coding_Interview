@@ -54,40 +54,38 @@ public class E11_MinNumberInRotatedArray {
 		return array[mid];
 	}
 
+	// ====================测试代码====================
+	private void test(String testName, int[] array, int expect) {
+		try {
+			System.out.printf("=====%s=====\n", testName);
+			System.out.printf("旋转数组的最小数字：Result:%d \t Expect:%d\n\n", minNumberInRotateArray(array), expect);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		E11_MinNumberInRotatedArray exam = new E11_MinNumberInRotatedArray();
 
-		// 典型输入，单调升序的数组的一个旋转
-		int[] array1 = { 3, 4, 5, 1, 2 };
-		System.out.println(exam.minNumberInRotateArray(array1) + "[1]");
+		int array1[] = { 3, 4, 5, 1, 2 };
+		exam.test("test1", array1, 1);
 
-		// 有重复数字，并且重复的数字刚好的最小的数字
-		int[] array2 = { 3, 4, 5, 1, 1, 2 };
-		System.out.println(exam.minNumberInRotateArray(array2) + "[1]");
+		int array2[] = { 3, 4, 5, 1, 1, 2 };
+		exam.test("test2", array2, 1);
 
-		// 有重复数字，但重复的数字不是第一个数字和最后一个数字
-		int[] array3 = { 3, 4, 5, 1, 2, 2 };
-		System.out.println(exam.minNumberInRotateArray(array3) + "[1]");
+		int array3[] = { 3, 4, 5, 1, 2, 2 };
+		exam.test("test3", array3, 1);
 
-		// 有重复的数字，并且重复的数字刚好是第一个数字和最后一个数字
-		int[] array4 = { 1, 0, 1, 1, 1 };
-		System.out.println(exam.minNumberInRotateArray(array4) + "[0]");
+		int array4[] = { 1, 0, 1, 1, 1 };
+		exam.test("test4", array4, 0);
 
-		// 单调升序数组，旋转0个元素，也就是单调升序数组本身
-		int[] array5 = { 1, 2, 3, 4, 5 };
-		System.out.println(exam.minNumberInRotateArray(array5) + "[1]");
+		int array5[] = { 1, 2, 3, 4, 5 };
+		exam.test("test5", array5, 1);
 
-		// 数组中只有一个数字
-		int[] array6 = { 2 };
-		System.out.println(exam.minNumberInRotateArray(array6) + "[2]");
+		int array6[] = { 2 };
+		exam.test("test6", array6, 2);
 
-		// 数组中数字都相同
-		int[] array7 = { 1, 1, 1, 1, 1, 1, 1 };
-		System.out.println(exam.minNumberInRotateArray(array7) + "[1]");
-		System.out.println(exam.minNumberInRotateArray(array6) + "[2]");
-
-		// 输入NULL
-		System.out.println(exam.minNumberInRotateArray(null) + "[0]");
+		exam.test("test7", null, 0);
 	}
 }
