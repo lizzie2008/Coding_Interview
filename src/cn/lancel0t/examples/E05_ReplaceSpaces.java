@@ -9,7 +9,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example05 {
+public class E05_ReplaceSpaces {
 
 	// 利用Java类库
 	public String replaceSpace(StringBuffer str) {
@@ -91,7 +91,7 @@ public class Example05 {
 
 	public static void main(String[] args) {
 
-		Example05 exam = new Example05();
+		E05_ReplaceSpaces exam = new E05_ReplaceSpaces();
 
 		// 空格在句子中间
 		System.out.println("=====Test1=====");

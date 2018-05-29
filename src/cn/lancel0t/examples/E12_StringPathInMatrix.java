@@ -12,7 +12,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example12 {
+public class E12_StringPathInMatrix {
 
 	// 回溯搜索算法
 	public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
@@ -70,7 +70,7 @@ public class Example12 {
 
 	public static void main(String[] args) {
 
-		Example12 exam = new Example12();
+		E12_StringPathInMatrix exam = new E12_StringPathInMatrix();
 
 		/*
 		 * 输入矩阵

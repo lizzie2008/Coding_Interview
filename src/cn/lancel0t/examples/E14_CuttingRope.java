@@ -10,7 +10,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example14 {
+public class E14_CuttingRope {
 
 	/*
 	 * 动态规划算法
@@ -52,7 +52,7 @@ public class Example14 {
 
 	public static void main(String[] args) {
 
-		Example14 exam = new Example14();
+		E14_CuttingRope exam = new E14_CuttingRope();
 
 		System.out.println(exam.maxAfterCutting(1) + "[0]");
 		System.out.println(exam.maxAfterCutting(2) + "[1]");

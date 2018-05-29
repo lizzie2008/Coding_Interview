@@ -11,7 +11,7 @@ package cn.lancel0t.examples;
 
 import java.util.Stack;
 
-public class Example09 {
+public class E09_QueueWithTwoStacks {
 
 	Stack<Integer> stack1 = new Stack<Integer>();
 	Stack<Integer> stack2 = new Stack<Integer>();
@@ -43,7 +43,7 @@ public class Example09 {
 
 	public static void main(String[] args) {
 
-		Example09 exam = new Example09();
+		E09_QueueWithTwoStacks exam = new E09_QueueWithTwoStacks();
 
 		exam.push(1);
 		exam.push(2);

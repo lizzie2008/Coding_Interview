@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example18 {
+public class E18_DeleteNodeInList {
 
 	// O(1)时间删除链表结点
 	public ListNode deleteNode(ListNode head, ListNode toBeDeleted) {
@@ -38,7 +38,7 @@ public class Example18 {
 
 	public static void main(String[] args) {
 
-		Example18 exam = new Example18();
+		E18_DeleteNodeInList exam = new E18_DeleteNodeInList();
 
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);

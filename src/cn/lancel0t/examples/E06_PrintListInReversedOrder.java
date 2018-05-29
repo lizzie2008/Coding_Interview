@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example06 {
+public class E06_PrintListInReversedOrder {
 
 	public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -31,7 +31,7 @@ public class Example06 {
 	}
 
 	public static void main(String[] args) {
-		Example06 exam = new Example06();
+		E06_PrintListInReversedOrder exam = new E06_PrintListInReversedOrder();
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
 		ListNode node3 = new ListNode(3);

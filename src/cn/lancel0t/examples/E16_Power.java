@@ -8,7 +8,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example16 {
+public class E16_Power {
 
 	public double Power(double base, int exponent) {
 
@@ -68,7 +68,7 @@ public class Example16 {
 
 	public static void main(String[] args) {
 
-		Example16 exam = new Example16();
+		E16_Power exam = new E16_Power();
 
 		System.out.println(exam.Power(2, 3) + "[8.0]");
 		System.out.println(exam.Power(-2, 3) + "[-8.0]");

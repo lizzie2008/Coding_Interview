@@ -11,7 +11,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example03 {
+public class E03_DuplicationInArray {
 
 	/*
 	 * 思路1：利用数组排序，时间复杂度：O(nlogn)，空间复杂度:O(1)
@@ -60,7 +60,7 @@ public class Example03 {
 	}
 
 	public static void main(String[] args) {
-		Example03 exam = new Example03();
+		E03_DuplicationInArray exam = new E03_DuplicationInArray();
 
 		// 重复的数字是数组中最小的数字
 		exam.test(new int[] { 2, 1, 3, 1, 4 }, 1);

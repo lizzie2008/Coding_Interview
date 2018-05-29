@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example22 {
+public class E22_KthNodeFromEnd {
 
 	/*
 	 * 这种题一般考虑双指针：
@@ -46,7 +46,7 @@ public class Example22 {
 
 	public static void main(String[] args) {
 
-		Example22 exam = new Example22();
+		E22_KthNodeFromEnd exam = new E22_KthNodeFromEnd();
 
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);

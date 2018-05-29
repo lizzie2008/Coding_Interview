@@ -11,7 +11,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example13 {
+public class E13_RobotMove {
 
 	public int movingCount(int threshold, int rows, int cols) {
 		// 参数校验
@@ -58,7 +58,7 @@ public class Example13 {
 
 	public static void main(String[] args) {
 
-		Example13 exam = new Example13();
+		E13_RobotMove exam = new E13_RobotMove();
 
 		System.out.println(exam.movingCount(5, 10, 10) + "[21]");
 		System.out.println(exam.movingCount(15, 20, 20) + "[359]");

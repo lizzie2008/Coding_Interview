@@ -8,7 +8,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example15 {
+public class E15_NumberOf1InBinary {
 
 	/*
 	 * 常规解法，flag初始为1，每次左移1位，n和flag做与运算，从低位依次统计
@@ -41,7 +41,7 @@ public class Example15 {
 
 	public static void main(String[] args) {
 
-		Example15 exam = new Example15();
+		E15_NumberOf1InBinary exam = new E15_NumberOf1InBinary();
 
 		System.out.println("===算法1输出：");
 		System.out.println(exam.NumberOf1I(0B00000000_00000000_00000000_00000000) + "[0]"); // 0

@@ -8,7 +8,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example02 {
+public class E02_Singleton {
 
 	/**
 	 * 饿汉式，线程安全

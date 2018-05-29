@@ -17,7 +17,7 @@ import java.util.Stack;
 
 import cn.lancel0t.utilities.TreeNode;
 
-public class Example27 {
+public class E27_MirrorOfBinaryTree {
 
 	/*
 	 * 二叉树的镜像
@@ -193,7 +193,7 @@ public class Example27 {
 
 	public static void main(String[] args) {
 
-		Example27 exam = new Example27();
+		E27_MirrorOfBinaryTree exam = new E27_MirrorOfBinaryTree();
 		exam.test1();
 		exam.test2();
 		exam.test3();

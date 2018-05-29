@@ -8,7 +8,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example10 {
+public class E10_Fibonacci {
 
 	// 迭代非递归
 	public int Fibonacci(int n) {
@@ -67,7 +67,7 @@ public class Example10 {
 
 	public static void main(String[] args) {
 
-		Example10 exam = new Example10();
+		E10_Fibonacci exam = new E10_Fibonacci();
 
 		System.out.print("===前20斐波那契数列：");
 		for (int i = 0; i < 20; i++) {

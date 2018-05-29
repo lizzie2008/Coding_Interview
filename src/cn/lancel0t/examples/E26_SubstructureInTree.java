@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.TreeNode;
 
-public class Example26 {
+public class E26_SubstructureInTree {
 
 	/*
 	 * 树的子结构
@@ -297,7 +297,7 @@ public class Example26 {
 
 	public static void main(String[] args) {
 
-		Example26 exam = new Example26();
+		E26_SubstructureInTree exam = new E26_SubstructureInTree();
 
 		exam.test1();
 		exam.test2();

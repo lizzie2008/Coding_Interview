@@ -10,7 +10,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example20 {
+public class E20_NumericStrings {
 
 	int index = 0;
 
@@ -73,7 +73,7 @@ public class Example20 {
 
 	public static void main(String[] args) {
 
-		Example20 exam = new Example20();
+		E20_NumericStrings exam = new E20_NumericStrings();
 
 		exam.test("100", true);
 		exam.test("123.45e+6", true);

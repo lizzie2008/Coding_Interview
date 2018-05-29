@@ -10,7 +10,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example21 {
+public class E21_ReorderArray {
 
 	// 保证原先顺序，冒泡排序思想，比较当前元素和下一个元素，如果当前元素是偶数且下一个元素为奇数，交换这两个数。
 	// 每次冒泡都会使得最后一个偶数在正确的位置。
@@ -73,7 +73,7 @@ public class Example21 {
 
 	public static void main(String[] args) {
 
-		Example21 exam = new Example21();
+		E21_ReorderArray exam = new E21_ReorderArray();
 
 		exam.test(new int[] { 1, 2, 3, 4, 5, 6, 7 });
 		exam.test(new int[] { 2, 4, 6, 1, 3, 5, 7 });

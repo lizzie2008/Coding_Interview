@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example24 {
+public class E24_ReverseList {
 
 	/*
 	 * 头插法反转链表
@@ -34,7 +34,7 @@ public class Example24 {
 
 	public static void main(String[] args) {
 
-		Example24 exam = new Example24();
+		E24_ReverseList exam = new E24_ReverseList();
 
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);

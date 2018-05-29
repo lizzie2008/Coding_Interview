@@ -13,7 +13,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.TreeNode;
 
-public class Example07 {
+public class E07_ConstructBinaryTree {
 
 	public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
 		// 输入的合法性判断，两个数组都不能为空，长度相等且有数据
@@ -68,7 +68,7 @@ public class Example07 {
 
 	public static void main(String[] args) {
 
-		Example07 exam = new Example07();
+		E07_ConstructBinaryTree exam = new E07_ConstructBinaryTree();
 
 		int[] preorder = { 10, 6, 4, 8, 14, 12, 16 };
 		int[] inorder = { 4, 6, 8, 10, 12, 14, 16 };

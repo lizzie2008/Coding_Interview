@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example23 {
+public class E23_EntryNodeInListLoop {
 
 	/*
 	 * 使用快慢指针的方法，如果快指针和慢指针相遇，则说明有环。
@@ -56,7 +56,7 @@ public class Example23 {
 
 	public static void main(String[] args) {
 
-		Example23 exam = new Example23();
+		E23_EntryNodeInListLoop exam = new E23_EntryNodeInListLoop();
 
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);

@@ -9,7 +9,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example08 {
+public class E08_NextNodeInBinaryTrees {
 
 	// 节点定义
 	public class TreeLinkNode {
@@ -64,7 +64,7 @@ public class Example08 {
 
 	public static void main(String[] args) {
 
-		Example08 exam = new Example08();
+		E08_NextNodeInBinaryTrees exam = new E08_NextNodeInBinaryTrees();
 
 		TreeLinkNode n1 = exam.new TreeLinkNode(1);
 		TreeLinkNode n2 = exam.new TreeLinkNode(2);

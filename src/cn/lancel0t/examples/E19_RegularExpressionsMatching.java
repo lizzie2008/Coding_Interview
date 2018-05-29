@@ -11,7 +11,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example19 {
+public class E19_RegularExpressionsMatching {
 
 	// 正则表达式匹配
 	public boolean match(char[] str, char[] pattern) {
@@ -79,7 +79,7 @@ public class Example19 {
 
 	public static void main(String[] args) {
 
-		Example19 exam = new Example19();
+		E19_RegularExpressionsMatching exam = new E19_RegularExpressionsMatching();
 
 		exam.test("", "", true);
 		exam.test("", ".*", true);

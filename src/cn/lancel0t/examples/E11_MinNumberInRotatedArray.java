@@ -11,7 +11,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example11 {
+public class E11_MinNumberInRotatedArray {
 
 	/*
 	 * 一般解法时间复杂度O(n)
@@ -56,7 +56,7 @@ public class Example11 {
 
 	public static void main(String[] args) {
 
-		Example11 exam = new Example11();
+		E11_MinNumberInRotatedArray exam = new E11_MinNumberInRotatedArray();
 
 		// 典型输入，单调升序的数组的一个旋转
 		int[] array1 = { 3, 4, 5, 1, 2 };

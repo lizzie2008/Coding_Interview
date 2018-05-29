@@ -10,7 +10,7 @@ package cn.lancel0t.examples;
 
 import cn.lancel0t.utilities.ListNode;
 
-public class Example25 {
+public class E25_MergeSortedLists {
 
 	/*
 	 * 参考排序--递归思想
@@ -169,7 +169,7 @@ public class Example25 {
 
 	public static void main(String[] args) {
 
-		Example25 exam = new Example25();
+		E25_MergeSortedLists exam = new E25_MergeSortedLists();
 
 		exam.test1();
 		exam.test2();

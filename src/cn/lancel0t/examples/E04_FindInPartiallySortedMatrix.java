@@ -9,7 +9,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example04 {
+public class E04_FindInPartiallySortedMatrix {
 
 	/*
 	 * 定义数组下标i,j始终指向矩阵右上角的位置
@@ -43,7 +43,7 @@ public class Example04 {
 	}
 
 	public static void main(String[] args) {
-		Example04 exam = new Example04();
+		E04_FindInPartiallySortedMatrix exam = new E04_FindInPartiallySortedMatrix();
 
 		// 1 2 8 9
 		// 2 4 9 12

@@ -8,7 +8,7 @@
  */
 package cn.lancel0t.examples;
 
-public class Example17 {
+public class E17_Print1ToMaxOfNDigits {
 
 	// 数字排列法
 	public void printOneToNthDigits(int n) {
@@ -55,7 +55,7 @@ public class Example17 {
 
 	public static void main(String[] args) {
 
-		Example17 exam = new Example17();
+		E17_Print1ToMaxOfNDigits exam = new E17_Print1ToMaxOfNDigits();
 		System.out.printf("%d位整型数打印:\n", 2);
 		exam.printOneToNthDigits(2);
 	}
