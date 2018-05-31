@@ -1,70 +1,95 @@
 /**
  * 
- * 【剑指Offer】	面试题32 ：从上往下打印二叉树
- * 【题目描述】	从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+ * 【剑指Offer】	面试题36 ：二叉搜索树与双向链表
+ * 【题目描述】	输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。
+ * 要求不能创建任何新的结点，只能调整树中结点指针的指向。
  * 
  * @author lancel0t
  * @date 2018年5月22日
  */
 package cn.lancel0t.examples;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 import cn.lancel0t.utilities.TreeNode;
 
-public class E32_PrintTreeFromTopToBottom {
+public class E36_ConvertBinarySearchTree {
 
 	/*
-	 * 从上往下打印二叉树
-	 * 分析打印同级元素某节点，打印该节点同时，将该节点的左右子节点保存到队列；
-	 * 打印同级元素后，依次打印队列中的保存的下一级子节点即可。
+	 * 二叉搜索树与双向链表
+	 * 思路：要将如下数转换为升序的双链表，首先考虑根节点10，在双链表中的上一个元素为8，即左子树的最大一个元素，
+	 * 同理，下一个元素为12，即右子树的最小元素。
+	 * 	      10
+	 *     /      \
+	 *    6        14         =>      4<->6<->8<->10<->12<->14<->16
+	 *   /\        /\
+	 *  4  8     12  16
 	 */
-	public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+	public TreeNode Convert(TreeNode pRootOfTree) {
 
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		if (root == null)
-			return list;
+		TreeNode lastNode = Convert(pRootOfTree, null);
 
-		// 辅助队列，保存下一层子节点
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.offer(root);
-
-		while (!queue.isEmpty()) {
-			// 弹出需要打印节点
-			TreeNode node = queue.poll();
-			list.add(node.val);
-
-			// 将该节点的下一层节点添加到打印队列
-			if (node.left != null)
-				queue.offer(node.left);
-			if (node.right != null)
-				queue.offer(node.right);
+		// 往前找到链表头位置
+		TreeNode headNode = lastNode;
+		while (headNode != null && headNode.left != null) {
+			headNode = headNode.left;
 		}
+		return headNode;
+	}
 
-		return list;
+	// 递归处理树节点的双向链接，并返回当前最后的节点
+	public TreeNode Convert(TreeNode node, TreeNode lastNode) {
+
+		if (node == null)
+			return lastNode;
+
+		TreeNode currNode = node;
+
+		// 递归处理左子树
+		if (currNode.left != null)
+			lastNode = Convert(currNode.left, lastNode);
+
+		// 将当前节点与左子树最大值双向链接
+		currNode.left = lastNode;
+		if (lastNode != null)
+			lastNode.right = currNode;
+
+		// 最大值变为当前节点
+		lastNode = currNode;
+
+		// 递归处理右子树
+		if (currNode.right != null)
+			lastNode = Convert(currNode.right, lastNode);
+
+		return lastNode;
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode root) {
+	private void test(String testName, TreeNode pRootOfTree) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			ArrayList<Integer> list = PrintFromTopToBottom(root);
-			if (!list.isEmpty()) {
-				System.out.print("从上往下打印二叉树:");
+			TreeNode node = Convert(pRootOfTree);
 
-				for (int i : list) {
-					System.out.print(i + " ");
-				}
-			} else {
-				System.out.print("无可打印的二叉树。");
+			System.out.printf("链表从左到右打印：");
+			while (node != null) {
+				System.out.print(node.val + " ");
+				if (node.right == null)
+					break;
+
+				node = node.right;
 			}
+			System.out.println();
+			System.out.printf("链表从右到左打印：");
+			while (node != null) {
+				System.out.print(node.val + " ");
+				if (node.left == null)
+					break;
 
+				node = node.left;
+			}
+			System.out.println();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("\n");
+		System.out.println();
 	}
 
 	/*
@@ -155,7 +180,7 @@ public class E32_PrintTreeFromTopToBottom {
 
 	public static void main(String[] args) {
 
-		E32_PrintTreeFromTopToBottom exam = new E32_PrintTreeFromTopToBottom();
+		E36_ConvertBinarySearchTree exam = new E36_ConvertBinarySearchTree();
 
 		exam.test1();
 		exam.test2();
