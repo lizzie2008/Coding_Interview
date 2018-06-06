@@ -61,13 +61,13 @@ public class E43_NumberOf1 {
 
 		E43_NumberOf1 exam = new E43_NumberOf1();
 
-		exam.test("Test1", 1, 1);
-		exam.test("Test2", 5, 1);
-		exam.test("Test3", 10, 2);
-		exam.test("Test4", 55, 16);
-		exam.test("Test5", 99, 20);
-		exam.test("Test6", 10000, 4001);
-		exam.test("Test7", 21345, 18821);
-		exam.test("Test8", 0, 0);
+		exam.test("test1", 1, 1);
+		exam.test("test2", 5, 1);
+		exam.test("test3", 10, 2);
+		exam.test("test4", 55, 16);
+		exam.test("test5", 99, 20);
+		exam.test("test6", 10000, 4001);
+		exam.test("test7", 21345, 18821);
+		exam.test("test8", 0, 0);
 	}
 }

@@ -54,32 +54,32 @@ public class E45_SortArrayForMinNumber {
 
 	private void test1() {
 		int numbers[] = { 3, 5, 1, 4, 2 };
-		test("Test1", numbers, "12345");
+		test("test1", numbers, "12345");
 	}
 
 	private void test2() {
 		int numbers[] = { 3, 32, 321 };
-		test("Test2", numbers, "321323");
+		test("test2", numbers, "321323");
 	}
 
 	private void test3() {
 		int numbers[] = { 3, 323, 32123 };
-		test("Test3", numbers, "321233233");
+		test("test3", numbers, "321233233");
 	}
 
 	private void test4() {
 		int numbers[] = { 1, 11, 111 };
-		test("Test4", numbers, "111111");
+		test("test4", numbers, "111111");
 	}
 
 	private void test5() {
 		int numbers[] = { 321 };
-		test("Test5", numbers, "321");
+		test("test5", numbers, "321");
 	}
 
 	private void test6() {
 		int numbers[] = null;
-		test("Test6", numbers, "null");
+		test("test6", numbers, "null");
 	}
 
 	public static void main(String[] args) {

@@ -78,14 +78,14 @@ public class E44_DigitsInSequence {
 
 		E44_DigitsInSequence exam = new E44_DigitsInSequence();
 
-		exam.test("Test1", 0, 0);
-		exam.test("Test2", 1, 1);
-		exam.test("Test3", 9, 9);
-		exam.test("Test4", 10, 1);
-		exam.test("Test5", 189, 9); // 数字99的最后一位，9
-		exam.test("Test6", 190, 1); // 数字100的第一位，1
-		exam.test("Test7", 1000, 3); // 数字370的第一位，3
-		exam.test("Test8", 1001, 7); // 数字370的第二位，7
-		exam.test("Test9", 1002, 0); // 数字370的第三位，0
+		exam.test("test1", 0, 0);
+		exam.test("test2", 1, 1);
+		exam.test("test3", 9, 9);
+		exam.test("test4", 10, 1);
+		exam.test("test5", 189, 9); // 数字99的最后一位，9
+		exam.test("test6", 190, 1); // 数字100的第一位，1
+		exam.test("test7", 1000, 3); // 数字370的第一位，3
+		exam.test("test8", 1001, 7); // 数字370的第二位，7
+		exam.test("test9", 1002, 0); // 数字370的第三位，0
 	}
 }
