@@ -50,8 +50,8 @@ public class E43_NumberOf1 {
 	private void test(String testName, int n, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("整数从1到%d出现的次数:\nResult:%d\nExpect:%d\n", n, NumberOf1Between1AndN_Solution(n),
-					expect);
+			System.out.printf("整数从1到%d出现的次数:\nResult:%d\nExpect:%d\n", n,
+					NumberOf1Between1AndN_Solution(n), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

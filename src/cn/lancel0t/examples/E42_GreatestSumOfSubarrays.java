@@ -53,7 +53,8 @@ public class E42_GreatestSumOfSubarrays {
 	private void test(String testName, int[] array, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("连续子数组的最大和:Result:%d \t Expect:%d\n", FindGreatestSumOfSubArray(array), expect);
+			System.out.printf("连续子数组的最大和:Result:%d \t Expect:%d\n", FindGreatestSumOfSubArray(array),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

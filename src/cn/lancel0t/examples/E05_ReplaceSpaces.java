@@ -71,7 +71,8 @@ public class E05_ReplaceSpaces {
 		char[] chars = toChars(str);
 		int ret = replaceSpace(chars, 100);
 		if (ret >= 0) {
-			System.out.printf("替换空格：Result:%s \t Expect:%s\n\n", new String(chars).substring(0, ret), expect);
+			System.out.printf("替换空格：Result:%s \t Expect:%s\n\n", new String(chars).substring(0, ret),
+					expect);
 		} else
 			System.out.printf("替换空格：Result:%s\t Expect:%s\n\n", null, null);
 	}

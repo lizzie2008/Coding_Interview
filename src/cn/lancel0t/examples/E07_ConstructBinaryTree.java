@@ -53,7 +53,8 @@ public class E07_ConstructBinaryTree {
 		// 递归构建当前根结点的右子树，右子树的元素个数：inEnd-index个
 		// 右子树对应的前序遍历的位置在[preStart + index - inStart + 1, preEnd]
 		// 右子树对应的中序遍历的位置在[index+1, inEnd]
-		root.right = construct(preOrder, inOrder, preStart + index - inStart + 1, preEnd, index + 1, inEnd);
+		root.right = construct(preOrder, inOrder, preStart + index - inStart + 1, preEnd, index + 1,
+				inEnd);
 
 		return root;
 	}

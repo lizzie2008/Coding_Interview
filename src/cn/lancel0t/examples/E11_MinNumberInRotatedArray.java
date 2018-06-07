@@ -58,7 +58,8 @@ public class E11_MinNumberInRotatedArray {
 	private void test(String testName, int[] array, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("旋转数组的最小数字：Result:%d \t Expect:%d\n\n", minNumberInRotateArray(array), expect);
+			System.out.printf("旋转数组的最小数字：Result:%d \t Expect:%d\n\n", minNumberInRotateArray(array),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

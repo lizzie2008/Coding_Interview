@@ -127,20 +127,20 @@ public class E02_Singleton {
 
 	// ====================测试代码====================
 	public static void main(String[] args) {
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton1.getInstance() == Singleton1.getInstance(),
-				true);
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton2.getInstance() == Singleton2.getInstance(),
-				true);
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton3.getInstance() == Singleton3.getInstance(),
-				true);
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton4.getInstance() == Singleton4.getInstance(),
-				true);
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton5.getInstance() == Singleton5.getInstance(),
-				true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton1.getInstance() == Singleton1.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton2.getInstance() == Singleton2.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton3.getInstance() == Singleton3.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton4.getInstance() == Singleton4.getInstance(), true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton5.getInstance() == Singleton5.getInstance(), true);
 		// System.out.printf("Result: %b\tExpect: %b\n", Singleton6.INSTANCE ==
 		// Singleton6.INSTANCE, true);
-		System.out.printf("Result: %b\tExpect: %b\n", Singleton7.getInstance() == Singleton7.getInstance(),
-				true);
+		System.out.printf("Result: %b\tExpect: %b\n",
+				Singleton7.getInstance() == Singleton7.getInstance(), true);
 	}
 
 }

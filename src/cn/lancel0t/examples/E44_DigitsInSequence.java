@@ -67,7 +67,8 @@ public class E44_DigitsInSequence {
 	private void test(String testName, int index, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("数字序列中第%d位的数字:\nResult:%d\nExpect:%d\n", index, digitAtIndex(index), expect);
+			System.out.printf("数字序列中第%d位的数字:\nResult:%d\nExpect:%d\n", index, digitAtIndex(index),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

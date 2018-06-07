@@ -38,8 +38,8 @@ public class E12_StringPathInMatrix {
 		return false;
 	}
 
-	private boolean hasPathCore(char[] matrix, int rows, int cols, char[] str, boolean[] visited, int row,
-			int col, int pathLength) {
+	private boolean hasPathCore(char[] matrix, int rows, int cols, char[] str, boolean[] visited,
+			int row, int col, int pathLength) {
 
 		if (pathLength == str.length)
 			return true;
@@ -47,8 +47,8 @@ public class E12_StringPathInMatrix {
 		boolean hasPath = false;
 
 		// 判断位置是否合法
-		if (row >= 0 && row < rows && col >= 0 && col < cols && matrix[row * cols + col] == str[pathLength]
-				&& !visited[row * cols + col]) {
+		if (row >= 0 && row < rows && col >= 0 && col < cols
+				&& matrix[row * cols + col] == str[pathLength] && !visited[row * cols + col]) {
 
 			visited[row * cols + col] = true;
 			pathLength++;
@@ -141,7 +141,8 @@ public class E12_StringPathInMatrix {
 	// ADIDEJFM
 	// VCEIFGGS
 	private void test7() {
-		test("Test7", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SGGFIECVAASABCEHJIGQEMS", false);
+		test("Test7", "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS", 5, 8, "SGGFIECVAASABCEHJIGQEMS",
+				false);
 	}
 
 	// AAAA

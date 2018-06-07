@@ -59,7 +59,8 @@ public class E23_EntryNodeInListLoop {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			ListNode node = EntryNodeOfLoop(head);
-			System.out.printf("链表中环的入口结点：Result:%s \t Expect:%s\n\n", node == null ? "∅" : node.val, expect);
+			System.out.printf("链表中环的入口结点：Result:%s \t Expect:%s\n\n", node == null ? "∅" : node.val,
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

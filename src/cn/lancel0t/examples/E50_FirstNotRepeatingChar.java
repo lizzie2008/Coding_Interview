@@ -46,8 +46,8 @@ public class E50_FirstNotRepeatingChar {
 	private void test(String testName, String str, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("字符串%s中第一个只出现一次的字符:\nResult:%d\nExpect:%d\n", str, FirstNotRepeatingChar(str),
-					expect);
+			System.out.printf("字符串%s中第一个只出现一次的字符:\nResult:%d\nExpect:%d\n", str,
+					FirstNotRepeatingChar(str), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
