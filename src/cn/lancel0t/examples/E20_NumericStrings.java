@@ -71,8 +71,8 @@ public class E20_NumericStrings {
 	private void test(String testName, String str, boolean expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("验证结果：Result:%b \t Expect:%b\n\n", isNumeric(str == null ? null : str.toCharArray()),
-					expect);
+			System.out.printf("验证结果：Result:%b \t Expect:%b\n\n",
+					isNumeric(str == null ? null : str.toCharArray()), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

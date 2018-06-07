@@ -49,7 +49,8 @@ public class E22_KthNodeFromEnd {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			ListNode node = FindKthToTail(head, k);
-			System.out.printf("倒数第%d个结点：Result:%s \t Expect:%s\n\n", k, node == null ? "∅" : node.val, expect);
+			System.out.printf("倒数第%d个结点：Result:%s \t Expect:%s\n\n", k, node == null ? "∅" : node.val,
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

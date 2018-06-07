@@ -38,8 +38,8 @@ public class E12_StringPathInMatrix {
 		return false;
 	}
 
-	private boolean hasPathCore(char[] matrix, int rows, int cols, char[] str, boolean[] visited, int row, int col,
-			int pathLength) {
+	private boolean hasPathCore(char[] matrix, int rows, int cols, char[] str, boolean[] visited, int row,
+			int col, int pathLength) {
 
 		if (pathLength == str.length)
 			return true;

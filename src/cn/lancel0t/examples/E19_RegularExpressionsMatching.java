@@ -77,8 +77,8 @@ public class E19_RegularExpressionsMatching {
 	private void test(String testName, String str, String pattern, boolean expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("匹配结果：Result:%b \t Expect:%b\n\n", match(str.toCharArray(), pattern.toCharArray()),
-					expect);
+			System.out.printf("匹配结果：Result:%b \t Expect:%b\n\n",
+					match(str.toCharArray(), pattern.toCharArray()), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

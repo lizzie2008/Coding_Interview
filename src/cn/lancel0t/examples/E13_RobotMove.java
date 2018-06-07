@@ -60,7 +60,8 @@ public class E13_RobotMove {
 	private void test(String testName, int threshold, int rows, int cols, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("机器人的运动范围：Result:%d \t Expect:%d\n\n", movingCount(threshold, rows, cols), expect);
+			System.out.printf("机器人的运动范围：Result:%d \t Expect:%d\n\n", movingCount(threshold, rows, cols),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

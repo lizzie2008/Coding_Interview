@@ -58,8 +58,8 @@ public class E48_LongestSubstringWithoutDup {
 	private void test(String testName, String str, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("最长不含重复字符的子字符串的长度:\nResult:%d\nExpect:%d\n", longestSubstringWithoutDuplication(str),
-					expect);
+			System.out.printf("最长不含重复字符的子字符串的长度:\nResult:%d\nExpect:%d\n",
+					longestSubstringWithoutDuplication(str), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

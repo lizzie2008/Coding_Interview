@@ -71,7 +71,8 @@ public class E08_NextNodeInBinaryTrees {
 	private void test(TreeLinkNode pNode, String expect) {
 		try {
 			TreeLinkNode node = GetNext(pNode);
-			System.out.printf("节点%s下一个结点：Result:%s \t Expect:%s\n", pNode.val, node == null ? "∅" : node.val, expect);
+			System.out.printf("节点%s下一个结点：Result:%s \t Expect:%s\n", pNode.val, node == null ? "∅" : node.val,
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

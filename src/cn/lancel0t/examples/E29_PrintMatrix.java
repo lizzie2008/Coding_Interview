@@ -36,7 +36,8 @@ public class E29_PrintMatrix {
 	}
 
 	// 顺时针打印矩阵
-	private void PrintMatrixInCircle(int[][] matrix, int rows, int cols, int start, ArrayList<Integer> printList) {
+	private void PrintMatrixInCircle(int[][] matrix, int rows, int cols, int start,
+			ArrayList<Integer> printList) {
 
 		int endX = cols - 1 - start;
 		int endY = rows - 1 - start;
@@ -112,7 +113,8 @@ public class E29_PrintMatrix {
 	13   14   15   16
 	*/
 	private void test3() {
-		int[][] matrix = new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+		int[][] matrix = new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 },
+				{ 13, 14, 15, 16 } };
 		test("test3", matrix);
 	}
 
@@ -161,7 +163,8 @@ public class E29_PrintMatrix {
 	13   14   15
 	*/
 	private void test7() {
-		int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, }, { 10, 11, 12 }, { 13, 14, 15 } };
+		int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, }, { 10, 11, 12 },
+				{ 13, 14, 15 } };
 		test("test7", matrix);
 	}
 

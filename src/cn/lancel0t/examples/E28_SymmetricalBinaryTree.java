@@ -227,6 +227,7 @@ public class E28_SymmetricalBinaryTree {
 	private void test8() {
 		test("test8", null, true);
 	}
+
 	/*
 	 *          5
 	 *         / \
@@ -253,9 +254,10 @@ public class E28_SymmetricalBinaryTree {
 		TreeNode.connectTreeNodes(pNode32, null, pNode42);
 		TreeNode.connectTreeNodes(pNode41, null, null);
 		TreeNode.connectTreeNodes(pNode42, null, null);
-	    
+
 		test("test9", pNode1, true);
 	}
+
 	public static void main(String[] args) {
 
 		E28_SymmetricalBinaryTree exam = new E28_SymmetricalBinaryTree();

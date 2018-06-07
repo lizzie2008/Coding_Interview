@@ -62,7 +62,8 @@ public class E49_UglyNumber {
 	private void test(String testName, int index, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("从小到大的顺序的第%d丑数:\nResult:%d\nExpect:%d\n", index, GetUglyNumber_Solution(index), expect);
+			System.out.printf("从小到大的顺序的第%d丑数:\nResult:%d\nExpect:%d\n", index, GetUglyNumber_Solution(index),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

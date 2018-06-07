@@ -66,7 +66,8 @@ public class E39_MoreThanHalfNumber {
 	private void test(String testName, int[] array, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("出现次数超过一半的数字:Result:%d \t Expect:%d\n", MoreThanHalfNum_Solution(array), expect);
+			System.out.printf("出现次数超过一半的数字:Result:%d \t Expect:%d\n", MoreThanHalfNum_Solution(array),
+					expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -43,7 +43,7 @@ public class E15_NumberOf1InBinary {
 	private void test(String testName, int n, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			System.out.printf("二进制：%s\n",Integer.toBinaryString(n));
+			System.out.printf("二进制：%s\n", Integer.toBinaryString(n));
 			System.out.printf("二进制中1 的个数：Result:%d \t Expect:%d\n\n", NumberOf1(n), expect);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

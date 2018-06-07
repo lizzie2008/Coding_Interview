@@ -49,6 +49,7 @@ public class E03_DuplicationInArray {
 		}
 		return false;
 	}
+
 	// ====================测试代码====================
 	private void test(String testName, int numbers[], int expect) {
 		System.out.println(testName);

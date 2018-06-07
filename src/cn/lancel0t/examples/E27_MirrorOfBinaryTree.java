@@ -89,7 +89,7 @@ public class E27_MirrorOfBinaryTree {
 		}
 		System.out.println();
 	}
-	
+
 	/*
 	 * 测试完全二叉树：除了叶子节点，其他节点都有两个子节点
 	 *            8
@@ -109,7 +109,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
 		TreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
 
-		test("test1",pNode8);
+		test("test1", pNode8);
 	}
 
 	/*
@@ -132,7 +132,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, pNode5, null);
 		TreeNode.connectTreeNodes(pNode5, pNode4, null);
 
-		test("test2",pNode8);
+		test("test2", pNode8);
 	}
 
 	/*
@@ -155,7 +155,7 @@ public class E27_MirrorOfBinaryTree {
 		TreeNode.connectTreeNodes(pNode6, null, pNode5);
 		TreeNode.connectTreeNodes(pNode5, null, pNode4);
 
-		test("test3",pNode8);
+		test("test3", pNode8);
 	}
 
 	/*
@@ -164,7 +164,7 @@ public class E27_MirrorOfBinaryTree {
 	private void test4() {
 		TreeNode pNode = null;
 
-		test("test4",pNode);
+		test("test4", pNode);
 	}
 
 	/*
@@ -173,7 +173,7 @@ public class E27_MirrorOfBinaryTree {
 	private void test5() {
 		TreeNode pNode8 = new TreeNode(8);
 
-		test("test5",pNode8);
+		test("test5", pNode8);
 	}
 
 	public static void main(String[] args) {

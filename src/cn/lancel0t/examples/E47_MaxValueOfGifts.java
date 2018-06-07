@@ -41,7 +41,7 @@ public class E47_MaxValueOfGifts {
 				if (j > 0)
 					left = maxValues[i][j - 1];
 
-				//比较之前的位置能取到的最大值，并累计当前值
+				// 比较之前的位置能取到的最大值，并累计当前值
 				maxValues[i][j] = Math.max(left, up) + data[i][j];
 			}
 		}

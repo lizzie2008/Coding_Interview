@@ -53,7 +53,7 @@ public class E46_TranslateNumbersToStrings {
 					if (i < number.length() - 2) {
 						count += sum[i + 2];
 					} else {
-						//倒数第二位初始值
+						// 倒数第二位初始值
 						count += 1;
 					}
 				}

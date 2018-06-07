@@ -25,7 +25,8 @@ public class E07_ConstructBinaryTree {
 	}
 
 	// 递归法，根据前序和中序，分别生成左右子树
-	private TreeNode construct(int[] preOrder, int[] inOrder, int preStart, int preEnd, int inStart, int inEnd) {
+	private TreeNode construct(int[] preOrder, int[] inOrder, int preStart, int preEnd, int inStart,
+			int inEnd) {
 		if (preStart > preEnd) {
 			return null;
 		}
@@ -47,7 +48,8 @@ public class E07_ConstructBinaryTree {
 		// 递归构建当前根结点的左子树，左子树的元素个数：index-inStart+1个
 		// 左子树对应的前序遍历的位置在[preStart + 1, preStart + index - inStart]
 		// 左子树对应的中序遍历的位置在[inStart, index-1]
-		root.left = construct(preOrder, inOrder, preStart + 1, preStart + index - inStart, inStart, index - 1);
+		root.left = construct(preOrder, inOrder, preStart + 1, preStart + index - inStart, inStart,
+				index - 1);
 		// 递归构建当前根结点的右子树，右子树的元素个数：inEnd-index个
 		// 右子树对应的前序遍历的位置在[preStart + index - inStart + 1, preEnd]
 		// 右子树对应的中序遍历的位置在[index+1, inEnd]
