@@ -16,8 +16,43 @@ public class E60_DicesProbability {
 	 * 那么，F(n, s)等于n - 1个骰子投掷的点数和为s - 1、s - 2、s - 3、s -4、s - 5、s - 6时的次数的总和：
 	 * F(n , s) = F(n - 1, s - 1) + F(n - 1, s - 2) + F(n - 1, s - 3) + F(n - 1, s - 4) 
 	 * + F(n - 1, s - 5) + F(n - 1, s - 6)。
+	 * 用2个数组来存储骰子点数每一个总数出现的次数，下次循环时，加上一个新骰子，此时和为n的骰子等于上一次循环
+	 * 中骰子点数和为n-1、n-2、n-3、n-4、n-5、n-6次数总和，依次将最新循环计数分别来回记录在2个数组中。
 	 */
-	public void PrintProbability(int n) {
+	public void PrintProbability(int number) {
+		if (number < 1)
+			return;
+
+		int[][] pProbabilities = new int[][] { new int[6 * number + 1], new int[6 * number + 1] };
+
+		int flag = 0;
+		for (int i = 1; i <= 6; i++)
+			pProbabilities[flag][i] = 1;
+
+		for (int k = 2; k <= number; k++) {
+
+			// 数值范围[k,6k],所以0-k置零
+			for (int i = 0; i < k; i++)
+				pProbabilities[1 - flag][i] = 0;
+
+			for (int i = k; i <= 6 * k; i++) {
+				pProbabilities[1 - flag][i] = 0;
+				// 等于上一次循环 中骰子点数和为n-1、n-2、n-3、n-4、n-5、n-6次数总和
+				for (int j = 1; j <= i && j <= 6; j++)
+					pProbabilities[1 - flag][i] += pProbabilities[flag][i - j];
+			}
+
+			flag = 1 - flag;
+		}
+
+		int total = (int) Math.pow((double) 6, number);
+		for (int i = number; i <= 6 * number; i++) {
+			System.out.printf("P(s=%d) = %d/%d\n", i, pProbabilities[flag][i], total);
+		}
+	}
+
+	// 递归法
+	public void PrintProbabilityI(int n) {
 		int i = 0;
 		int nTotal = (int) Math.pow((double) 6, n);
 		for (i = n; i <= 6 * n; i++) {
@@ -54,7 +89,7 @@ public class E60_DicesProbability {
 
 		E60_DicesProbability exam = new E60_DicesProbability();
 
-		exam.test("test1", 1);
+		// exam.test("test1", 1);
 		exam.test("test2", 2);
 		exam.test("test3", 3);
 		exam.test("test4", 4);
