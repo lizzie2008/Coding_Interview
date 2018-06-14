@@ -20,13 +20,12 @@ public class E68_CommonParentInTree {
 	 */
 	public TreeNode getLastCommonParent(TreeNode root, TreeNode p1, TreeNode p2) {
 
-		// path1和path2分别存储根节点到p1和p2的路径（不包括p1和p2）
+		// path1和path2分别存储根节点到p1和p2的路径
 		List<TreeNode> path1 = new ArrayList<TreeNode>();
 		List<TreeNode> path2 = new ArrayList<TreeNode>();
-		List<TreeNode> tmpList = new ArrayList<TreeNode>();
 
-		getNodePath(root, p1, tmpList, path1);
-		getNodePath(root, p2, tmpList, path2);
+		getNodePath(root, p1, path1);
+		getNodePath(root, p2, path2);
 		// 如果路径不存在，返回空
 		if (path1.size() == 0 || path2.size() == 0)
 			return null;
@@ -35,23 +34,21 @@ public class E68_CommonParentInTree {
 	}
 
 	// 获取根节点到目标节点的路径
-	private void getNodePath(TreeNode root, TreeNode target, List<TreeNode> tmpList,
-			List<TreeNode> path) {
+	private boolean getNodePath(TreeNode root, TreeNode target, List<TreeNode> path) {
 
-		if (root == null || root == target)
-			return;
+		if (root == target)
+			return true;
 
-		tmpList.add(root);
-		List<TreeNode> children = root.children;
-		for (TreeNode node : children) {
-			if (node == target) {
-				path.addAll(tmpList);
-				break;
-			}
-			getNodePath(node, target, tmpList, path);
+		path.add(root);
+		boolean found = false;
+		for (int i = 0; !found && i < root.children.size(); i++) {
+			found = getNodePath(root.children.get(i), target, path);
 		}
 
-		tmpList.remove(tmpList.size() - 1);
+		if (!found)
+			path.remove(path.size() - 1);
+
+		return found;
 	}
 
 	// 将问题转化为求链表最后一个共同节点
@@ -79,9 +76,9 @@ public class E68_CommonParentInTree {
 
 	/*
 	 * 形状普通的树
-	 *             1
-	 *           /   \
-	 *          2     3
+	 *          1
+	 *        /   \
+	 *       2     3
 	 *      /       \
 	 *     4         5
 	 *    / \      / |  \
