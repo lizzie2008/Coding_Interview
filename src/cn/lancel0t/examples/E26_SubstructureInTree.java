@@ -8,14 +8,14 @@
  */
 package cn.lancel0t.examples;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E26_SubstructureInTree {
 
 	/*
 	 * 树的子结构
 	 */
-	public boolean HasSubtree(TreeNode root1, TreeNode root2) {
+	public boolean HasSubtree(BinaryTreeNode root1, BinaryTreeNode root2) {
 
 		// A或B树为空情况
 		if (root1 == null || root2 == null) {
@@ -34,7 +34,7 @@ public class E26_SubstructureInTree {
 	/*
 	 * 检查节点即子节点是否匹配
 	 */
-	public boolean match(TreeNode root1, TreeNode root2) {
+	public boolean match(BinaryTreeNode root1, BinaryTreeNode root2) {
 
 		// 树B为空，返回true
 		if (root2 == null) {
@@ -55,7 +55,7 @@ public class E26_SubstructureInTree {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode node1, TreeNode node2, boolean expect) {
+	private void test(String testName, BinaryTreeNode node1, BinaryTreeNode node2, boolean expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			System.out.printf("是否是树的子结构：Result:%b \t Expect:%b\n", HasSubtree(node1, node2), expect);
@@ -76,23 +76,23 @@ public class E26_SubstructureInTree {
 	 *     4   7
 	 */
 	private void test1() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(7);
-		TreeNode pNodeA4 = new TreeNode(9);
-		TreeNode pNodeA5 = new TreeNode(2);
-		TreeNode pNodeA6 = new TreeNode(4);
-		TreeNode pNodeA7 = new TreeNode(7);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(7);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(2);
+		BinaryTreeNode pNodeA6 = new BinaryTreeNode(4);
+		BinaryTreeNode pNodeA7 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNodeA1, pNodeA2, pNodeA3);
-		TreeNode.connectTreeNodes(pNodeA2, pNodeA4, pNodeA5);
-		TreeNode.connectTreeNodes(pNodeA5, pNodeA6, pNodeA7);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, pNodeA2, pNodeA3);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, pNodeA4, pNodeA5);
+		BinaryTreeNode.connectTreeNodes(pNodeA5, pNodeA6, pNodeA7);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
 		test("test1", pNodeA1, pNodeB1, true);
 	}
@@ -108,23 +108,23 @@ public class E26_SubstructureInTree {
 	 *     4   7
 	 */
 	private void test2() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(7);
-		TreeNode pNodeA4 = new TreeNode(9);
-		TreeNode pNodeA5 = new TreeNode(3);
-		TreeNode pNodeA6 = new TreeNode(4);
-		TreeNode pNodeA7 = new TreeNode(7);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(7);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(3);
+		BinaryTreeNode pNodeA6 = new BinaryTreeNode(4);
+		BinaryTreeNode pNodeA7 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNodeA1, pNodeA2, pNodeA3);
-		TreeNode.connectTreeNodes(pNodeA2, pNodeA4, pNodeA5);
-		TreeNode.connectTreeNodes(pNodeA5, pNodeA6, pNodeA7);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, pNodeA2, pNodeA3);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, pNodeA4, pNodeA5);
+		BinaryTreeNode.connectTreeNodes(pNodeA5, pNodeA6, pNodeA7);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
 		test("test2", pNodeA1, pNodeB1, false);
 	}
@@ -142,23 +142,23 @@ public class E26_SubstructureInTree {
 	 *  5
 	 */
 	private void test3() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(9);
-		TreeNode pNodeA4 = new TreeNode(2);
-		TreeNode pNodeA5 = new TreeNode(5);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(2);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNodeA1, pNodeA2, null);
-		TreeNode.connectTreeNodes(pNodeA2, pNodeA3, null);
-		TreeNode.connectTreeNodes(pNodeA3, pNodeA4, null);
-		TreeNode.connectTreeNodes(pNodeA4, pNodeA5, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, pNodeA2, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, pNodeA3, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA3, pNodeA4, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA4, pNodeA5, null);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
-		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
+		BinaryTreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
 
 		test("test3", pNodeA1, pNodeB1, true);
 	}
@@ -176,23 +176,23 @@ public class E26_SubstructureInTree {
 	 *  5
 	 */
 	private void test4() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(9);
-		TreeNode pNodeA4 = new TreeNode(2);
-		TreeNode pNodeA5 = new TreeNode(5);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(2);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNodeA1, pNodeA2, null);
-		TreeNode.connectTreeNodes(pNodeA2, pNodeA3, null);
-		TreeNode.connectTreeNodes(pNodeA3, pNodeA4, null);
-		TreeNode.connectTreeNodes(pNodeA4, pNodeA5, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, pNodeA2, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, pNodeA3, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA3, pNodeA4, null);
+		BinaryTreeNode.connectTreeNodes(pNodeA4, pNodeA5, null);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(3);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(3);
 
-		TreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
-		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, pNodeB2, null);
+		BinaryTreeNode.connectTreeNodes(pNodeB2, pNodeB3, null);
 
 		test("test4", pNodeA1, pNodeB1, false);
 	}
@@ -210,23 +210,23 @@ public class E26_SubstructureInTree {
 	 *          5
 	 */
 	private void test5() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(9);
-		TreeNode pNodeA4 = new TreeNode(2);
-		TreeNode pNodeA5 = new TreeNode(5);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(2);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
-		TreeNode.connectTreeNodes(pNodeA2, null, pNodeA3);
-		TreeNode.connectTreeNodes(pNodeA3, null, pNodeA4);
-		TreeNode.connectTreeNodes(pNodeA4, null, pNodeA5);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, null, pNodeA3);
+		BinaryTreeNode.connectTreeNodes(pNodeA3, null, pNodeA4);
+		BinaryTreeNode.connectTreeNodes(pNodeA4, null, pNodeA5);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
-		TreeNode.connectTreeNodes(pNodeB2, null, pNodeB3);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
+		BinaryTreeNode.connectTreeNodes(pNodeB2, null, pNodeB3);
 
 		test("test5", pNodeA1, pNodeB1, true);
 	}
@@ -244,24 +244,24 @@ public class E26_SubstructureInTree {
 	 *          5
 	 */
 	private void test6() {
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(8);
-		TreeNode pNodeA3 = new TreeNode(9);
-		TreeNode pNodeA4 = new TreeNode(2);
-		TreeNode pNodeA5 = new TreeNode(5);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(2);
+		BinaryTreeNode pNodeA5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
-		TreeNode.connectTreeNodes(pNodeA2, null, pNodeA3);
-		TreeNode.connectTreeNodes(pNodeA3, null, pNodeA4);
-		TreeNode.connectTreeNodes(pNodeA4, null, pNodeA5);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, null, pNodeA3);
+		BinaryTreeNode.connectTreeNodes(pNodeA3, null, pNodeA4);
+		BinaryTreeNode.connectTreeNodes(pNodeA4, null, pNodeA5);
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(3);
-		TreeNode pNodeB4 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNodeB4 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
-		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
+		BinaryTreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
 		test("test6", pNodeA1, pNodeB1, false);
 	}
@@ -271,13 +271,13 @@ public class E26_SubstructureInTree {
 	 */
 	private void test7() {
 
-		TreeNode pNodeB1 = new TreeNode(8);
-		TreeNode pNodeB2 = new TreeNode(9);
-		TreeNode pNodeB3 = new TreeNode(3);
-		TreeNode pNodeB4 = new TreeNode(2);
+		BinaryTreeNode pNodeB1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeB2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeB3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNodeB4 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
-		TreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
+		BinaryTreeNode.connectTreeNodes(pNodeB1, null, pNodeB2);
+		BinaryTreeNode.connectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
 		test("test7", null, pNodeB1, false);
 	}
@@ -287,13 +287,13 @@ public class E26_SubstructureInTree {
 	 */
 	private void test8() {
 
-		TreeNode pNodeA1 = new TreeNode(8);
-		TreeNode pNodeA2 = new TreeNode(9);
-		TreeNode pNodeA3 = new TreeNode(3);
-		TreeNode pNodeA4 = new TreeNode(2);
+		BinaryTreeNode pNodeA1 = new BinaryTreeNode(8);
+		BinaryTreeNode pNodeA2 = new BinaryTreeNode(9);
+		BinaryTreeNode pNodeA3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNodeA4 = new BinaryTreeNode(2);
 
-		TreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
-		TreeNode.connectTreeNodes(pNodeA2, pNodeA3, pNodeA4);
+		BinaryTreeNode.connectTreeNodes(pNodeA1, null, pNodeA2);
+		BinaryTreeNode.connectTreeNodes(pNodeA2, pNodeA3, pNodeA4);
 
 		test("test8", pNodeA1, null, false);
 	}

@@ -8,21 +8,21 @@
  */
 package cn.lancel0t.examples;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E28_SymmetricalBinaryTree {
 
 	/*
 	 * 判断一颗二叉树是不是对称
 	 */
-	public boolean isSymmetrical(TreeNode pRoot) {
+	public boolean isSymmetrical(BinaryTreeNode pRoot) {
 		if (pRoot == null)
 			return true;
 
 		return isSymmetrical(pRoot.left, pRoot.right);
 	}
 
-	private boolean isSymmetrical(TreeNode root1, TreeNode root2) {
+	private boolean isSymmetrical(BinaryTreeNode root1, BinaryTreeNode root2) {
 
 		// A为空，B为空
 		if (root1 == null && root2 == null)
@@ -42,7 +42,7 @@ public class E28_SymmetricalBinaryTree {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode root, boolean expect) {
+	private void test(String testName, BinaryTreeNode root, boolean expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			System.out.printf("是否对称的二叉树：Result:%b \t Expect:%b\n", isSymmetrical(root), expect);
@@ -59,17 +59,17 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test1() {
 
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode61 = new TreeNode(6);
-		TreeNode pNode62 = new TreeNode(6);
-		TreeNode pNode51 = new TreeNode(5);
-		TreeNode pNode71 = new TreeNode(7);
-		TreeNode pNode72 = new TreeNode(7);
-		TreeNode pNode52 = new TreeNode(5);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode61 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode62 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode51 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode71 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode72 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode52 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode8, pNode61, pNode62);
-		TreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
-		TreeNode.connectTreeNodes(pNode62, pNode72, pNode52);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode61, pNode62);
+		BinaryTreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
+		BinaryTreeNode.connectTreeNodes(pNode62, pNode72, pNode52);
 
 		test("test1", pNode8, true);
 	}
@@ -81,17 +81,17 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test2() {
 
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode61 = new TreeNode(6);
-		TreeNode pNode9 = new TreeNode(9);
-		TreeNode pNode51 = new TreeNode(5);
-		TreeNode pNode71 = new TreeNode(7);
-		TreeNode pNode72 = new TreeNode(7);
-		TreeNode pNode52 = new TreeNode(5);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode61 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode9 = new BinaryTreeNode(9);
+		BinaryTreeNode pNode51 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode71 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode72 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode52 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode8, pNode61, pNode9);
-		TreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
-		TreeNode.connectTreeNodes(pNode9, pNode72, pNode52);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode61, pNode9);
+		BinaryTreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
+		BinaryTreeNode.connectTreeNodes(pNode9, pNode72, pNode52);
 
 		test("test2", pNode8, false);
 	}
@@ -103,16 +103,16 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test3() {
 
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode61 = new TreeNode(6);
-		TreeNode pNode62 = new TreeNode(6);
-		TreeNode pNode51 = new TreeNode(5);
-		TreeNode pNode71 = new TreeNode(7);
-		TreeNode pNode72 = new TreeNode(7);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode61 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode62 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode51 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode71 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode72 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNode8, pNode61, pNode62);
-		TreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
-		TreeNode.connectTreeNodes(pNode62, pNode72, null);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode61, pNode62);
+		BinaryTreeNode.connectTreeNodes(pNode61, pNode51, pNode71);
+		BinaryTreeNode.connectTreeNodes(pNode62, pNode72, null);
 
 		test("test3", pNode8, false);
 	}
@@ -130,23 +130,23 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test4() {
 
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode31 = new TreeNode(3);
-		TreeNode pNode32 = new TreeNode(3);
-		TreeNode pNode41 = new TreeNode(4);
-		TreeNode pNode42 = new TreeNode(4);
-		TreeNode pNode21 = new TreeNode(2);
-		TreeNode pNode22 = new TreeNode(2);
-		TreeNode pNode11 = new TreeNode(1);
-		TreeNode pNode12 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode31 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode32 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode41 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode42 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode21 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode22 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode11 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode12 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
-		TreeNode.connectTreeNodes(pNode31, pNode41, null);
-		TreeNode.connectTreeNodes(pNode32, null, pNode42);
-		TreeNode.connectTreeNodes(pNode41, pNode21, null);
-		TreeNode.connectTreeNodes(pNode42, null, pNode22);
-		TreeNode.connectTreeNodes(pNode21, pNode11, null);
-		TreeNode.connectTreeNodes(pNode22, null, pNode12);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
+		BinaryTreeNode.connectTreeNodes(pNode31, pNode41, null);
+		BinaryTreeNode.connectTreeNodes(pNode32, null, pNode42);
+		BinaryTreeNode.connectTreeNodes(pNode41, pNode21, null);
+		BinaryTreeNode.connectTreeNodes(pNode42, null, pNode22);
+		BinaryTreeNode.connectTreeNodes(pNode21, pNode11, null);
+		BinaryTreeNode.connectTreeNodes(pNode22, null, pNode12);
 
 		test("test4", pNode5, true);
 	}
@@ -164,23 +164,23 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test5() {
 
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode31 = new TreeNode(3);
-		TreeNode pNode32 = new TreeNode(3);
-		TreeNode pNode41 = new TreeNode(4);
-		TreeNode pNode42 = new TreeNode(4);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode22 = new TreeNode(2);
-		TreeNode pNode11 = new TreeNode(1);
-		TreeNode pNode12 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode31 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode32 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode41 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode42 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode22 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode11 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode12 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
-		TreeNode.connectTreeNodes(pNode31, pNode41, null);
-		TreeNode.connectTreeNodes(pNode32, null, pNode42);
-		TreeNode.connectTreeNodes(pNode41, pNode6, null);
-		TreeNode.connectTreeNodes(pNode42, null, pNode22);
-		TreeNode.connectTreeNodes(pNode6, pNode11, null);
-		TreeNode.connectTreeNodes(pNode22, null, pNode12);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
+		BinaryTreeNode.connectTreeNodes(pNode31, pNode41, null);
+		BinaryTreeNode.connectTreeNodes(pNode32, null, pNode42);
+		BinaryTreeNode.connectTreeNodes(pNode41, pNode6, null);
+		BinaryTreeNode.connectTreeNodes(pNode42, null, pNode22);
+		BinaryTreeNode.connectTreeNodes(pNode6, pNode11, null);
+		BinaryTreeNode.connectTreeNodes(pNode22, null, pNode12);
 
 		test("test5", pNode5, false);
 	}
@@ -198,28 +198,28 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test6() {
 
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode31 = new TreeNode(3);
-		TreeNode pNode32 = new TreeNode(3);
-		TreeNode pNode41 = new TreeNode(4);
-		TreeNode pNode42 = new TreeNode(4);
-		TreeNode pNode21 = new TreeNode(2);
-		TreeNode pNode22 = new TreeNode(2);
-		TreeNode pNode11 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode31 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode32 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode41 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode42 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode21 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode22 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode11 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
-		TreeNode.connectTreeNodes(pNode31, pNode41, null);
-		TreeNode.connectTreeNodes(pNode32, null, pNode42);
-		TreeNode.connectTreeNodes(pNode41, pNode21, null);
-		TreeNode.connectTreeNodes(pNode42, null, pNode22);
-		TreeNode.connectTreeNodes(pNode21, pNode11, null);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode31, pNode32);
+		BinaryTreeNode.connectTreeNodes(pNode31, pNode41, null);
+		BinaryTreeNode.connectTreeNodes(pNode32, null, pNode42);
+		BinaryTreeNode.connectTreeNodes(pNode41, pNode21, null);
+		BinaryTreeNode.connectTreeNodes(pNode42, null, pNode22);
+		BinaryTreeNode.connectTreeNodes(pNode21, pNode11, null);
 
 		test("test6", pNode5, false);
 	}
 
 	// 只有一个结点
 	private void test7() {
-		TreeNode pNode = new TreeNode(1);
+		BinaryTreeNode pNode = new BinaryTreeNode(1);
 		test("test7", pNode, true);
 	}
 
@@ -239,21 +239,21 @@ public class E28_SymmetricalBinaryTree {
 	 */
 	private void test9() {
 
-		TreeNode pNode1 = new TreeNode(5);
-		TreeNode pNode21 = new TreeNode(5);
-		TreeNode pNode22 = new TreeNode(5);
-		TreeNode pNode31 = new TreeNode(5);
-		TreeNode pNode32 = new TreeNode(5);
-		TreeNode pNode41 = new TreeNode(5);
-		TreeNode pNode42 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode21 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode22 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode31 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode32 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode41 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode42 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, pNode21, pNode22);
-		TreeNode.connectTreeNodes(pNode21, pNode31, null);
-		TreeNode.connectTreeNodes(pNode22, null, pNode32);
-		TreeNode.connectTreeNodes(pNode31, pNode41, null);
-		TreeNode.connectTreeNodes(pNode32, null, pNode42);
-		TreeNode.connectTreeNodes(pNode41, null, null);
-		TreeNode.connectTreeNodes(pNode42, null, null);
+		BinaryTreeNode.connectTreeNodes(pNode1, pNode21, pNode22);
+		BinaryTreeNode.connectTreeNodes(pNode21, pNode31, null);
+		BinaryTreeNode.connectTreeNodes(pNode22, null, pNode32);
+		BinaryTreeNode.connectTreeNodes(pNode31, pNode41, null);
+		BinaryTreeNode.connectTreeNodes(pNode32, null, pNode42);
+		BinaryTreeNode.connectTreeNodes(pNode41, null, null);
+		BinaryTreeNode.connectTreeNodes(pNode42, null, null);
 
 		test("test9", pNode1, true);
 	}

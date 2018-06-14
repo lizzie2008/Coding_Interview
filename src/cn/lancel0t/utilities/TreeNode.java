@@ -6,43 +6,27 @@
  */
 package cn.lancel0t.utilities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TreeNode {
 
 	public int val = 0;
-	public TreeNode left = null;
-	public TreeNode right = null;
+	public List<TreeNode> children = new ArrayList<>();
 
 	public TreeNode(int val) {
 		this.val = val;
 	}
 
-	public static void connectTreeNodes(TreeNode pParent, TreeNode pLeft, TreeNode pRight) {
+	public static void connectTreeNodes(TreeNode pParent, TreeNode pChild) {
 		if (pParent != null) {
-			pParent.left = pLeft;
-			pParent.right = pRight;
+			pParent.children.add(pChild);
 		}
 	}
 
-	public static void PrintTreeNode(TreeNode pNode) {
-		if (pNode != null) {
-			System.out.printf("节点值: %s\t", pNode.val);
-			System.out.printf("左孩子: %s\t", pNode.left != null ? pNode.left.val : "∅");
-			System.out.printf("右孩子: %s\n", pNode.right != null ? pNode.right.val : "∅");
-		} else {
-			System.out.printf("节点为∅\n");
-		}
-	}
-
-	public static void printTree(TreeNode pRoot) {
-		PrintTreeNode(pRoot);
-
-		if (pRoot != null) {
-			if (pRoot.left != null)
-				printTree(pRoot.left);
-
-			if (pRoot.right != null)
-				printTree(pRoot.right);
-		}
+	@Override
+	public String toString() {
+		return val + "";
 	}
 
 }

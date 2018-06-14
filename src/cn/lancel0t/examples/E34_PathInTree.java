@@ -12,7 +12,7 @@ package cn.lancel0t.examples;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E34_PathInTree {
 
@@ -22,7 +22,7 @@ public class E34_PathInTree {
 	 * 如果该节点不是叶子节点，继续访问子节点；
 	 * 当前节点访问结束后，返回它的父节点，同时删除路径中该节点
 	 */
-	public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+	public ArrayList<ArrayList<Integer>> FindPath(BinaryTreeNode root, int target) {
 
 		ArrayList<ArrayList<Integer>> allPath = new ArrayList<ArrayList<Integer>>();
 		if (root == null)
@@ -37,7 +37,7 @@ public class E34_PathInTree {
 	/*
 	 * 递归方法
 	 */
-	private void FindPath(TreeNode root, int target, Stack<Integer> pathStack, int pathSum,
+	private void FindPath(BinaryTreeNode root, int target, Stack<Integer> pathStack, int pathSum,
 			ArrayList<ArrayList<Integer>> allPath) {
 
 		// 添加当前节点到路径中
@@ -70,7 +70,7 @@ public class E34_PathInTree {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode root, int target) {
+	private void test(String testName, BinaryTreeNode root, int target) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			ArrayList<ArrayList<Integer>> allPath = FindPath(root, target);
@@ -101,14 +101,14 @@ public class E34_PathInTree {
 	 * 4  7     
 	 */
 	private void test1() {
-		TreeNode pNode10 = new TreeNode(10);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode12 = new TreeNode(12);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode7 = new TreeNode(7);
+		BinaryTreeNode pNode10 = new BinaryTreeNode(10);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode12 = new BinaryTreeNode(12);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNode10, pNode5, pNode12);
-		TreeNode.connectTreeNodes(pNode5, pNode4, pNode7);
+		BinaryTreeNode.connectTreeNodes(pNode10, pNode5, pNode12);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, pNode7);
 
 		test("test1", pNode10, 22);
 	}
@@ -122,14 +122,14 @@ public class E34_PathInTree {
 	 * 4  7     
 	 */
 	private void test2() {
-		TreeNode pNode10 = new TreeNode(10);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode12 = new TreeNode(12);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode7 = new TreeNode(7);
+		BinaryTreeNode pNode10 = new BinaryTreeNode(10);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode12 = new BinaryTreeNode(12);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNode10, pNode5, pNode12);
-		TreeNode.connectTreeNodes(pNode5, pNode4, pNode7);
+		BinaryTreeNode.connectTreeNodes(pNode10, pNode5, pNode12);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, pNode7);
 
 		test("test2", pNode10, 15);
 	}
@@ -147,16 +147,16 @@ public class E34_PathInTree {
 	 * 1   
 	 */
 	private void test3() {
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode4, null);
-		TreeNode.connectTreeNodes(pNode4, pNode3, null);
-		TreeNode.connectTreeNodes(pNode3, pNode2, null);
-		TreeNode.connectTreeNodes(pNode2, pNode1, null);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode4, pNode3, null);
+		BinaryTreeNode.connectTreeNodes(pNode3, pNode2, null);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode1, null);
 
 		test("test3", pNode5, 15);
 	}
@@ -174,23 +174,23 @@ public class E34_PathInTree {
 	 *         5  
 	 */
 	private void test4() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, null, pNode2);
-		TreeNode.connectTreeNodes(pNode2, null, pNode3);
-		TreeNode.connectTreeNodes(pNode3, null, pNode4);
-		TreeNode.connectTreeNodes(pNode4, null, pNode5);
+		BinaryTreeNode.connectTreeNodes(pNode1, null, pNode2);
+		BinaryTreeNode.connectTreeNodes(pNode2, null, pNode3);
+		BinaryTreeNode.connectTreeNodes(pNode3, null, pNode4);
+		BinaryTreeNode.connectTreeNodes(pNode4, null, pNode5);
 
 		test("test4", pNode1, 16);
 	}
 
 	// 树中只有1个结点
 	private void test5() {
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 		test("test4", pNode1, 1);
 	}
 

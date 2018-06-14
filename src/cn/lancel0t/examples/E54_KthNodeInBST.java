@@ -9,7 +9,7 @@
 package cn.lancel0t.examples;
 
 import java.util.Stack;
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E54_KthNodeInBST {
 
@@ -18,15 +18,15 @@ public class E54_KthNodeInBST {
 	 * 思路：二叉搜索树的一个重要性质就是它的中序遍历是排序的，所以我们通过非递归遍历二叉树，使用辅助栈，
 	 * 每次访问根节点时，计数加1，直到计数等于k时，当前结点就是要求的结点。
 	 */
-	public TreeNode KthNode(TreeNode pRoot, int k) {
+	public BinaryTreeNode KthNode(BinaryTreeNode pRoot, int k) {
 
 		if (pRoot == null || k <= 0)
 			return null;
 
 		int index = 0;
-		TreeNode kthNode = null;
-		TreeNode node = pRoot;
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+		BinaryTreeNode kthNode = null;
+		BinaryTreeNode node = pRoot;
+		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
 		while (node != null || !stack.isEmpty()) {
 			if (node != null) {
 				stack.push(node);
@@ -46,10 +46,10 @@ public class E54_KthNodeInBST {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode pRoot, int k, int expect) {
+	private void test(String testName, BinaryTreeNode pRoot, int k, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			TreeNode node = KthNode(pRoot, k);
+			BinaryTreeNode node = KthNode(pRoot, k);
 			System.out.printf("二叉搜索树的第%d个结点:\nResult:%s\nExpect:%d\n", k, node == null ? "-1" : node.val,
 					expect);
 		} catch (Exception e) {
@@ -64,17 +64,17 @@ public class E54_KthNodeInBST {
 	 * 5 7    9  11
 	 */
 	private void testA() {
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode10 = new TreeNode(10);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode7 = new TreeNode(7);
-		TreeNode pNode9 = new TreeNode(9);
-		TreeNode pNode11 = new TreeNode(11);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode10 = new BinaryTreeNode(10);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode9 = new BinaryTreeNode(9);
+		BinaryTreeNode pNode11 = new BinaryTreeNode(11);
 
-		TreeNode.connectTreeNodes(pNode8, pNode6, pNode10);
-		TreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
-		TreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode6, pNode10);
+		BinaryTreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
+		BinaryTreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
 
 		test("testA0", pNode8, 0, -1);
 		test("testA1", pNode8, 1, 5);
@@ -100,16 +100,16 @@ public class E54_KthNodeInBST {
 	 *  1
 	 */
 	private void testB() {
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode4, null);
-		TreeNode.connectTreeNodes(pNode4, pNode3, null);
-		TreeNode.connectTreeNodes(pNode3, pNode2, null);
-		TreeNode.connectTreeNodes(pNode2, pNode1, null);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode4, pNode3, null);
+		BinaryTreeNode.connectTreeNodes(pNode3, pNode2, null);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode1, null);
 
 		test("testB0", pNode5, 0, -1);
 		test("testB1", pNode5, 1, 1);
@@ -132,16 +132,16 @@ public class E54_KthNodeInBST {
 	//         5
 	 */
 	private void testC() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, null, pNode2);
-		TreeNode.connectTreeNodes(pNode2, null, pNode3);
-		TreeNode.connectTreeNodes(pNode3, null, pNode4);
-		TreeNode.connectTreeNodes(pNode4, null, pNode5);
+		BinaryTreeNode.connectTreeNodes(pNode1, null, pNode2);
+		BinaryTreeNode.connectTreeNodes(pNode2, null, pNode3);
+		BinaryTreeNode.connectTreeNodes(pNode3, null, pNode4);
+		BinaryTreeNode.connectTreeNodes(pNode4, null, pNode5);
 
 		test("testC0", pNode1, 0, -1);
 		test("testC1", pNode1, 1, 1);
@@ -154,7 +154,7 @@ public class E54_KthNodeInBST {
 
 	// 只有1个节点
 	private void testD() {
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 
 		test("testD0", pNode1, 0, -1);
 		test("testD1", pNode1, 1, 1);

@@ -15,27 +15,27 @@ package cn.lancel0t.examples;
 
 import java.util.Stack;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E27_MirrorOfBinaryTree {
 
 	/*
 	 * 二叉树的镜像
 	 */
-	public void Mirror(TreeNode root) {
+	public void Mirror(BinaryTreeNode root) {
 		MirrorIteratively(root);
 	}
 
 	/*
 	 * 递归方式
 	 */
-	public void MirrorRecursively(TreeNode root) {
+	public void MirrorRecursively(BinaryTreeNode root) {
 
 		if (root == null || (root.left == null && root.right == null))
 			return;
 
 		// 镜像根节点
-		TreeNode tmp = root.left;
+		BinaryTreeNode tmp = root.left;
 		root.left = root.right;
 		root.right = tmp;
 
@@ -50,19 +50,19 @@ public class E27_MirrorOfBinaryTree {
 	/*
 	 * 迭代方式
 	 */
-	public void MirrorIteratively(TreeNode root) {
+	public void MirrorIteratively(BinaryTreeNode root) {
 		if (root == null)
 			return;
 
-		Stack<TreeNode> stackTreeNode = new Stack<TreeNode>();
+		Stack<BinaryTreeNode> stackTreeNode = new Stack<BinaryTreeNode>();
 		stackTreeNode.push(root);
 
 		// 将栈中的节点依次弹出并处理
 		while (stackTreeNode.size() > 0) {
-			TreeNode node = stackTreeNode.pop();
+			BinaryTreeNode node = stackTreeNode.pop();
 
 			// 处理当前节点
-			TreeNode tmp = node.left;
+			BinaryTreeNode tmp = node.left;
 			node.left = node.right;
 			node.right = tmp;
 
@@ -76,14 +76,14 @@ public class E27_MirrorOfBinaryTree {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode root) {
+	private void test(String testName, BinaryTreeNode root) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			System.out.println("镜像前：");
-			TreeNode.printTree(root);
+			BinaryTreeNode.printTree(root);
 			System.out.println("镜像后：");
 			Mirror(root);
-			TreeNode.printTree(root);
+			BinaryTreeNode.printTree(root);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -97,17 +97,17 @@ public class E27_MirrorOfBinaryTree {
 	 *       5 7    9  11
 	 */
 	private void test1() {
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode10 = new TreeNode(10);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode7 = new TreeNode(7);
-		TreeNode pNode9 = new TreeNode(9);
-		TreeNode pNode11 = new TreeNode(11);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode10 = new BinaryTreeNode(10);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode9 = new BinaryTreeNode(9);
+		BinaryTreeNode pNode11 = new BinaryTreeNode(11);
 
-		TreeNode.connectTreeNodes(pNode8, pNode6, pNode10);
-		TreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
-		TreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode6, pNode10);
+		BinaryTreeNode.connectTreeNodes(pNode6, pNode5, pNode7);
+		BinaryTreeNode.connectTreeNodes(pNode10, pNode9, pNode11);
 
 		test("test1", pNode8);
 	}
@@ -121,16 +121,16 @@ public class E27_MirrorOfBinaryTree {
 	 * 4
 	 */
 	private void test2() {
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode7 = new TreeNode(7);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode4 = new TreeNode(4);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
 
-		TreeNode.connectTreeNodes(pNode8, pNode7, null);
-		TreeNode.connectTreeNodes(pNode7, pNode6, null);
-		TreeNode.connectTreeNodes(pNode6, pNode5, null);
-		TreeNode.connectTreeNodes(pNode5, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode8, pNode7, null);
+		BinaryTreeNode.connectTreeNodes(pNode7, pNode6, null);
+		BinaryTreeNode.connectTreeNodes(pNode6, pNode5, null);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, null);
 
 		test("test2", pNode8);
 	}
@@ -144,16 +144,16 @@ public class E27_MirrorOfBinaryTree {
 	 *      4
 	 */
 	private void test3() {
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode7 = new TreeNode(7);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode4 = new TreeNode(4);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
 
-		TreeNode.connectTreeNodes(pNode8, null, pNode7);
-		TreeNode.connectTreeNodes(pNode7, null, pNode6);
-		TreeNode.connectTreeNodes(pNode6, null, pNode5);
-		TreeNode.connectTreeNodes(pNode5, null, pNode4);
+		BinaryTreeNode.connectTreeNodes(pNode8, null, pNode7);
+		BinaryTreeNode.connectTreeNodes(pNode7, null, pNode6);
+		BinaryTreeNode.connectTreeNodes(pNode6, null, pNode5);
+		BinaryTreeNode.connectTreeNodes(pNode5, null, pNode4);
 
 		test("test3", pNode8);
 	}
@@ -162,7 +162,7 @@ public class E27_MirrorOfBinaryTree {
 	 * 测试空二叉树：根结点为空指针
 	 */
 	private void test4() {
-		TreeNode pNode = null;
+		BinaryTreeNode pNode = null;
 
 		test("test4", pNode);
 	}
@@ -171,7 +171,7 @@ public class E27_MirrorOfBinaryTree {
 	 * 测试只有一个结点的二叉树
 	 */
 	private void test5() {
-		TreeNode pNode8 = new TreeNode(8);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
 
 		test("test5", pNode8);
 	}

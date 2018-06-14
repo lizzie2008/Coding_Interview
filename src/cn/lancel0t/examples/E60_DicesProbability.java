@@ -89,7 +89,7 @@ public class E60_DicesProbability {
 
 		E60_DicesProbability exam = new E60_DicesProbability();
 
-		// exam.test("test1", 1);
+		exam.test("test1", 1);
 		exam.test("test2", 2);
 		exam.test("test3", 3);
 		exam.test("test4", 4);

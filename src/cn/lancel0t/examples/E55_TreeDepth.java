@@ -9,7 +9,7 @@
  */
 package cn.lancel0t.examples;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E55_TreeDepth {
 
@@ -18,7 +18,7 @@ public class E55_TreeDepth {
 	 * 思路：如果树只有一个节点，则深度为1，如果只有左子树，深度为左子树加1，同理只有右子树，深度为右子树加1；
 	 * 如果既有左子树又有右子树，则取子树相对大的值加1，递归方法很容易实现。
 	 */
-	public int TreeDepth(TreeNode root) {
+	public int TreeDepth(BinaryTreeNode root) {
 
 		if (root == null)
 			return 0;
@@ -30,7 +30,7 @@ public class E55_TreeDepth {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode root, int expect) {
+	private void test(String testName, BinaryTreeNode root, int expect) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			System.out.printf("二叉树的深度:\nResult:%d\nExpect:%d\n", TreeDepth(root), expect);
@@ -50,18 +50,18 @@ public class E55_TreeDepth {
 	 *   7
 	 */
 	private void test1() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode7 = new TreeNode(7);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode7 = new BinaryTreeNode(7);
 
-		TreeNode.connectTreeNodes(pNode1, pNode2, pNode3);
-		TreeNode.connectTreeNodes(pNode2, pNode4, pNode5);
-		TreeNode.connectTreeNodes(pNode3, null, pNode6);
-		TreeNode.connectTreeNodes(pNode5, pNode7, null);
+		BinaryTreeNode.connectTreeNodes(pNode1, pNode2, pNode3);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode4, pNode5);
+		BinaryTreeNode.connectTreeNodes(pNode3, null, pNode6);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode7, null);
 
 		test("test1", pNode1, 4);
 	}
@@ -78,16 +78,16 @@ public class E55_TreeDepth {
 	 * 5
 	 */
 	private void test2() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, pNode2, null);
-		TreeNode.connectTreeNodes(pNode2, pNode3, null);
-		TreeNode.connectTreeNodes(pNode3, pNode4, null);
-		TreeNode.connectTreeNodes(pNode4, pNode5, null);
+		BinaryTreeNode.connectTreeNodes(pNode1, pNode2, null);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode3, null);
+		BinaryTreeNode.connectTreeNodes(pNode3, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode4, pNode5, null);
 
 		test("test2", pNode1, 5);
 	}
@@ -104,23 +104,23 @@ public class E55_TreeDepth {
 	 *         5
 	 */
 	private void test3() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, null, pNode2);
-		TreeNode.connectTreeNodes(pNode2, null, pNode3);
-		TreeNode.connectTreeNodes(pNode3, null, pNode4);
-		TreeNode.connectTreeNodes(pNode4, null, pNode5);
+		BinaryTreeNode.connectTreeNodes(pNode1, null, pNode2);
+		BinaryTreeNode.connectTreeNodes(pNode2, null, pNode3);
+		BinaryTreeNode.connectTreeNodes(pNode3, null, pNode4);
+		BinaryTreeNode.connectTreeNodes(pNode4, null, pNode5);
 
 		test("test3", pNode1, 5);
 	}
 
 	// 只有1个节点
 	private void test4() {
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 
 		test("test4", pNode1, 1);
 	}

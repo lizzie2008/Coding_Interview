@@ -9,7 +9,7 @@
  */
 package cn.lancel0t.examples;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E36_ConvertBinarySearchTree {
 
@@ -23,12 +23,12 @@ public class E36_ConvertBinarySearchTree {
 	 *   /\        /\
 	 *  4  8     12  16
 	 */
-	public TreeNode Convert(TreeNode pRootOfTree) {
+	public BinaryTreeNode Convert(BinaryTreeNode pRootOfTree) {
 
-		TreeNode lastNode = Convert(pRootOfTree, null);
+		BinaryTreeNode lastNode = Convert(pRootOfTree, null);
 
 		// 往前找到链表头位置
-		TreeNode headNode = lastNode;
+		BinaryTreeNode headNode = lastNode;
 		while (headNode != null && headNode.left != null) {
 			headNode = headNode.left;
 		}
@@ -36,12 +36,12 @@ public class E36_ConvertBinarySearchTree {
 	}
 
 	// 递归处理树节点的双向链接，并返回当前最后的节点
-	public TreeNode Convert(TreeNode node, TreeNode lastNode) {
+	public BinaryTreeNode Convert(BinaryTreeNode node, BinaryTreeNode lastNode) {
 
 		if (node == null)
 			return lastNode;
 
-		TreeNode currNode = node;
+		BinaryTreeNode currNode = node;
 
 		// 递归处理左子树
 		if (currNode.left != null)
@@ -63,10 +63,10 @@ public class E36_ConvertBinarySearchTree {
 	}
 
 	// ====================测试代码====================
-	private void test(String testName, TreeNode pRootOfTree) {
+	private void test(String testName, BinaryTreeNode pRootOfTree) {
 		try {
 			System.out.printf("=====%s=====\n", testName);
-			TreeNode node = Convert(pRootOfTree);
+			BinaryTreeNode node = Convert(pRootOfTree);
 
 			System.out.printf("链表从左到右打印：");
 			while (node != null) {
@@ -100,17 +100,17 @@ public class E36_ConvertBinarySearchTree {
 	 * 4  8     12  16
 	 */
 	private void test1() {
-		TreeNode pNode10 = new TreeNode(10);
-		TreeNode pNode6 = new TreeNode(6);
-		TreeNode pNode14 = new TreeNode(14);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode8 = new TreeNode(8);
-		TreeNode pNode12 = new TreeNode(12);
-		TreeNode pNode16 = new TreeNode(16);
+		BinaryTreeNode pNode10 = new BinaryTreeNode(10);
+		BinaryTreeNode pNode6 = new BinaryTreeNode(6);
+		BinaryTreeNode pNode14 = new BinaryTreeNode(14);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode8 = new BinaryTreeNode(8);
+		BinaryTreeNode pNode12 = new BinaryTreeNode(12);
+		BinaryTreeNode pNode16 = new BinaryTreeNode(16);
 
-		TreeNode.connectTreeNodes(pNode10, pNode6, pNode14);
-		TreeNode.connectTreeNodes(pNode6, pNode4, pNode8);
-		TreeNode.connectTreeNodes(pNode14, pNode12, pNode16);
+		BinaryTreeNode.connectTreeNodes(pNode10, pNode6, pNode14);
+		BinaryTreeNode.connectTreeNodes(pNode6, pNode4, pNode8);
+		BinaryTreeNode.connectTreeNodes(pNode14, pNode12, pNode16);
 
 		test("test1", pNode10);
 	}
@@ -127,16 +127,16 @@ public class E36_ConvertBinarySearchTree {
 	 *  1
 	 */
 	private void test2() {
-		TreeNode pNode5 = new TreeNode(5);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 
-		TreeNode.connectTreeNodes(pNode5, pNode4, null);
-		TreeNode.connectTreeNodes(pNode4, pNode3, null);
-		TreeNode.connectTreeNodes(pNode3, pNode2, null);
-		TreeNode.connectTreeNodes(pNode2, pNode1, null);
+		BinaryTreeNode.connectTreeNodes(pNode5, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode4, pNode3, null);
+		BinaryTreeNode.connectTreeNodes(pNode3, pNode2, null);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode1, null);
 
 		test("test2", pNode5);
 	}
@@ -153,23 +153,23 @@ public class E36_ConvertBinarySearchTree {
 	 *         5
 	 */
 	private void test3() {
-		TreeNode pNode1 = new TreeNode(1);
-		TreeNode pNode2 = new TreeNode(2);
-		TreeNode pNode3 = new TreeNode(3);
-		TreeNode pNode4 = new TreeNode(4);
-		TreeNode pNode5 = new TreeNode(5);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
+		BinaryTreeNode pNode2 = new BinaryTreeNode(2);
+		BinaryTreeNode pNode3 = new BinaryTreeNode(3);
+		BinaryTreeNode pNode4 = new BinaryTreeNode(4);
+		BinaryTreeNode pNode5 = new BinaryTreeNode(5);
 
-		TreeNode.connectTreeNodes(pNode1, pNode2, null);
-		TreeNode.connectTreeNodes(pNode2, pNode3, null);
-		TreeNode.connectTreeNodes(pNode3, pNode4, null);
-		TreeNode.connectTreeNodes(pNode4, pNode5, null);
+		BinaryTreeNode.connectTreeNodes(pNode1, pNode2, null);
+		BinaryTreeNode.connectTreeNodes(pNode2, pNode3, null);
+		BinaryTreeNode.connectTreeNodes(pNode3, pNode4, null);
+		BinaryTreeNode.connectTreeNodes(pNode4, pNode5, null);
 
 		test("test3", pNode1);
 	}
 
 	// 树中只有1个结点
 	private void test4() {
-		TreeNode pNode1 = new TreeNode(1);
+		BinaryTreeNode pNode1 = new BinaryTreeNode(1);
 		test("test4", pNode1);
 	}
 

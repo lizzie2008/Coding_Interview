@@ -11,11 +11,11 @@
  */
 package cn.lancel0t.examples;
 
-import cn.lancel0t.utilities.TreeNode;
+import cn.lancel0t.utilities.BinaryTreeNode;
 
 public class E07_ConstructBinaryTree {
 
-	public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+	public BinaryTreeNode reConstructBinaryTree(int[] pre, int[] in) {
 		// 输入的合法性判断，两个数组都不能为空，长度相等且有数据
 		if (pre == null || in == null || pre.length != in.length || pre.length < 1) {
 			return null;
@@ -25,7 +25,7 @@ public class E07_ConstructBinaryTree {
 	}
 
 	// 递归法，根据前序和中序，分别生成左右子树
-	private TreeNode construct(int[] preOrder, int[] inOrder, int preStart, int preEnd, int inStart,
+	private BinaryTreeNode construct(int[] preOrder, int[] inOrder, int preStart, int preEnd, int inStart,
 			int inEnd) {
 		if (preStart > preEnd) {
 			return null;
@@ -43,7 +43,7 @@ public class E07_ConstructBinaryTree {
 			throw new RuntimeException("无法重建二叉树，请检查输入的参数是否合法！");
 		}
 
-		TreeNode root = new TreeNode(rootVal);
+		BinaryTreeNode root = new BinaryTreeNode(rootVal);
 
 		// 递归构建当前根结点的左子树，左子树的元素个数：index-inStart+1个
 		// 左子树对应的前序遍历的位置在[preStart + 1, preStart + index - inStart]
@@ -64,8 +64,8 @@ public class E07_ConstructBinaryTree {
 		try {
 			System.out.printf("=====%s=====\n", testName);
 			System.out.println("重建二叉树：");
-			TreeNode root = reConstructBinaryTree(pre, in);
-			TreeNode.printTree(root);
+			BinaryTreeNode root = reConstructBinaryTree(pre, in);
+			BinaryTreeNode.printTree(root);
 			System.out.println("");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
